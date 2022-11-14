@@ -2,10 +2,11 @@
 
 _Currently in work_
 
-## Tech Stack
+## Tech Stack & Tools
 * React
 * Redux Toolkit
-
+* Chakra UI & Chakra UI Theme Tools
+* Bootstrap Icons
 
 ## Contacts
 * GitHub Profile
