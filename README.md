@@ -9,8 +9,8 @@ _Currently in work_
 * Bootstrap Icons
 
 ## Contacts
-* GitHub Profile
-* LinkedIn
+* [GitHub Profile](https://github.com/glebersh)
+* [LinkedIn](https://www.linkedin.com/in/gleb-ershov-804b50232/)
 * Mail: glebersh00@gmail.com
 
 
