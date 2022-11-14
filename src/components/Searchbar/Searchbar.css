@@ -1,0 +1,8 @@
+.searchbar__input {
+  width: 100%;
+  border: 1px solid black;
+  outline: none;
+  margin-top: 3em;
+  padding: 3px 10px;
+  text-indent: .7em;
+}

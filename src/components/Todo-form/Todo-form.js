@@ -14,12 +14,15 @@ const TodoForm = () => {
 
   return (
     <>
-      <label htmlFor='text-input'>
+      <label htmlFor='text-input'
+        className='todo-form__label'>
         <input id='text-input'
+          className='todo-form__input'
           type='text' value={text} onChange={(e) => setText(e.target.value)}
         />
       </label>
-      <button onClick={addTask}>Add</button>
+      <button onClick={addTask}
+        className='todo-form__button'>Add</button>
     </>
   )
 };

@@ -1,0 +1,22 @@
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-list__icon {
+  color: rgb(32, 167, 32);
+}
+
+
+.todo-list__icon:hover {
+  cursor: pointer;
+}
+
+.todo-list__icon:active {
+  transform: scale(0.95, 0.95);
+}
+
+.todo-list__icon:last-of-type {
+  color: rgb(192, 0, 0);
+}

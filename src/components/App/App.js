@@ -5,15 +5,20 @@ import TodoForm from '../Todo-form';
 import TodoList from '../Todo-list';
 import './App.css';
 
+import { Box, Button, useColorMode } from '@chakra-ui/react';
+
 const App = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <>
-      <h1>Hello to TODO</h1>
+    <Box w='50%' m='0 auto'>
+      <Button onClick={toggleColorMode}>
+        {colorMode === 'light' ? 'Dark' : 'Light'} Mode
+      </Button>
       <FilterBlock />
       <Searchbar />
       <TodoList />
       <TodoForm />
-    </>
+    </Box>
   )
 };
 
