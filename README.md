@@ -1,6 +1,6 @@
 # TODO application
 
-~Currently in work~
+_Currently in work_
 
 ## Tech Stack
 * React
