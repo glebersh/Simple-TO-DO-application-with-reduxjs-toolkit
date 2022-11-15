@@ -8,6 +8,9 @@ _Currently in work_
 * Chakra UI & Chakra UI Theme Tools
 * Bootstrap Icons
 
+## API 
+[JSONPlaceholder](https://jsonplaceholder.typicode.com/)
+
 ## Contacts
 * [GitHub Profile](https://github.com/glebersh)
 * [LinkedIn](https://www.linkedin.com/in/gleb-ershov-804b50232/)
