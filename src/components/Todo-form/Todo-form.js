@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './Todo-form.css';
-import { addItem } from '../slices/Todo-slice';
+import { addItemAsync } from '../slices/Todo-slice';
 
 const TodoForm = () => {
   const [text, setText] = useState('');
 
   const dispatch = useDispatch();
-  const addTask = () => {
-    dispatch(addItem(text));
-    setText('');
-  };
+  // const addTask = () => {
+  //   dispatch(addItem(text));
+  //   setText('');
+  // };
 
   return (
     <>
@@ -21,7 +21,7 @@ const TodoForm = () => {
           type='text' value={text} onChange={(e) => setText(e.target.value)}
         />
       </label>
-      <button onClick={addTask}
+      <button onClick={() => dispatch(addItemAsync(text))}
         className='todo-form__button'>Add</button>
     </>
   )

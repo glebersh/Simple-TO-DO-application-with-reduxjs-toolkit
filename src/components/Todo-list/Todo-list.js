@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import TodoItem from '../Todo-item/Todo-item';
 import './Todo-list.css';
-import { selectByFilter, selectAll } from '../selectors/selectors';
+import { selectByFilter } from '../selectors/selectors';
 
 const TodoList = () => {
   const listItems = useSelector(selectByFilter);

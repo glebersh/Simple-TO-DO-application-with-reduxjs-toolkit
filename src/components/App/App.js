@@ -7,18 +7,31 @@ import './App.css';
 
 import { Box, Button, useColorMode } from '@chakra-ui/react';
 
+import { fetchTodos } from '../slices/Todo-slice';
+import { useDispatch, useSelector } from 'react-redux';
+import ErrorBoundary from '../error-boundary/error-boundary';
+
 const App = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const dispatch = useDispatch();
+  const { loadingStatus,
+    errorStatus } = useSelector(state => state.todoReducer);
+
   return (
-    <Box w='50%' m='0 auto'>
-      <Button onClick={toggleColorMode}>
-        {colorMode === 'light' ? 'Dark' : 'Light'} Mode
-      </Button>
-      <FilterBlock />
-      <Searchbar />
-      <TodoList />
-      <TodoForm />
-    </Box>
+    <ErrorBoundary>
+      <Box w='50%' m='0 auto'>
+        {loadingStatus === 'loading' && <h2>Loading...</h2>}
+        {errorStatus && <h2>Error...</h2>}
+        <Button onClick={toggleColorMode}>
+          {colorMode === 'light' ? 'Dark' : 'Light'} Mode
+        </Button>
+        <button onClick={() => dispatch(fetchTodos())}>Get data from API</button>
+        <FilterBlock />
+        <Searchbar />
+        <TodoList />
+        <TodoForm />
+      </Box>
+    </ErrorBoundary>
   )
 };
 

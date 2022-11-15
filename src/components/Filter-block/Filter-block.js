@@ -23,7 +23,7 @@ const FilterBlock = () => {
           onClick={() => dispatch(changeFilter('active'))}>
           Active</button>
         <button className='filter-block__filter-button'
-          onClick={() => dispatch(changeFilter('done'))}>
+          onClick={() => dispatch(changeFilter(' completed'))}>
           Done</button>
       </Flex >
     </>

@@ -8,8 +8,8 @@ export const selectByFilter = createSelector(
   (allTodos, activeFilter) => {
     if (activeFilter === 'all') return allTodos;
 
-    if (activeFilter === 'done') {
-      return allTodos.filter((item) => item.done);
+    if (activeFilter === ' completed') {
+      return allTodos.filter((item) => item.completed);
     }
-    return allTodos.filter((item) => !item.done);
+    return allTodos.filter((item) => !item.completed);
   });
