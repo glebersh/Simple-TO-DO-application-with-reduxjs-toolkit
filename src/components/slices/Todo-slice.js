@@ -87,10 +87,34 @@ export const addItemAsync = createAsyncThunk(
         throw new Error('Item was not deleted due to an occurred error');
       }
       const data = await response.json();
-      console.log(data);
       dispatch(addItem(data));
     }
     catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const editTextAsync = createAsyncThunk(
+  'todo/editTextAsync',
+  async function ({ id, editedText }, { rejectWithValue, dispatch }) {
+    try {
+      const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`,
+        {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            title: editedText
+          })
+        }
+      );
+      if (!response.ok) {
+        throw new Error('Item was not deleted due to an occurred error');
+      }
+      dispatch(editText({ id, editedText }));
+    } catch (error) {
       return rejectWithValue(error.message);
     }
   }
@@ -125,6 +149,11 @@ const todoSlice = createSlice({
       neededItem.completed = !neededItem.completed;
     },
 
+    editText(state, action) {
+      const neededItem = state.todo.find(item => item.id === action.payload.id);
+      neededItem.title = action.payload.editedText;
+    },
+
   },
   extraReducers: {
     [fetchTodos.pending]: (state) => {
@@ -156,6 +185,7 @@ const todoSlice = createSlice({
 
 export const { addItem,
   deleteItem,
-  toggleDone } = todoSlice.actions;
+  toggleDone,
+  editText } = todoSlice.actions;
 
 export default todoSlice.reducer;

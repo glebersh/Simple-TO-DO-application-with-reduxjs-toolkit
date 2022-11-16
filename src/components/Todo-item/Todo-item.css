@@ -8,6 +8,10 @@
   color: rgb(32, 167, 32);
 }
 
+.todo-list__icon:nth-of-type(2) {
+  color: rgb(47, 0, 255);
+}
+
 
 .todo-list__icon:hover {
   cursor: pointer;

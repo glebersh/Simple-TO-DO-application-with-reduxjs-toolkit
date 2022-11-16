@@ -10,6 +10,7 @@ import { Box, Button, useColorMode } from '@chakra-ui/react';
 import { fetchTodos } from '../slices/Todo-slice';
 import { useDispatch, useSelector } from 'react-redux';
 import ErrorBoundary from '../error-boundary/error-boundary';
+import RegisterForm from '../register-form/Register-form';
 
 const App = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -30,6 +31,7 @@ const App = () => {
         <Searchbar />
         <TodoList />
         <TodoForm />
+        <RegisterForm />
       </Box>
     </ErrorBoundary>
   )
