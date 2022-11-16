@@ -125,12 +125,12 @@ const todoSlice = createSlice({
   name: 'todos',
   initialState: {
     todo: [
-      { id: 1, title: 'eat', completed: false },
-      { id: 2, title: 'sleep', completed: false },
-      { id: 3, title: 'drink', completed: false },
-      { id: 4, title: 'maybe drink again', completed: false },
-      { id: 5, title: 'learn redux', completed: false },
-      { id: 6, title: 'have fun', completed: false },
+      { id: 1, title: 'eat', completed: false, priority: 'Low' },
+      { id: 2, title: 'sleep', completed: false, priority: 'Low' },
+      { id: 3, title: 'drink', completed: false, priority: 'Low' },
+      { id: 4, title: 'maybe drink again', completed: false, priority: 'Low' },
+      { id: 5, title: 'learn redux', completed: false, priority: 'Low' },
+      { id: 6, title: 'have fun', completed: false, priority: 'Low' },
     ],
     loadingStatus: null,
     errorStatus: null,
@@ -152,6 +152,12 @@ const todoSlice = createSlice({
     editText(state, action) {
       const neededItem = state.todo.find(item => item.id === action.payload.id);
       neededItem.title = action.payload.editedText;
+    },
+
+    togglePriority(state, action) {
+      const neededItem = state.todo.find(item => item.id === action.payload.id);
+      neededItem.priority = action.payload.priority;
+      console.log(neededItem.priority);
     },
 
   },
@@ -186,6 +192,6 @@ const todoSlice = createSlice({
 export const { addItem,
   deleteItem,
   toggleDone,
-  editText } = todoSlice.actions;
+  editText, togglePriority } = todoSlice.actions;
 
 export default todoSlice.reducer;

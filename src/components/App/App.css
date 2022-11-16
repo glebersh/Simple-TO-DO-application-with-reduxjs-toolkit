@@ -3,3 +3,16 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+#root {
+  width: 100%;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}

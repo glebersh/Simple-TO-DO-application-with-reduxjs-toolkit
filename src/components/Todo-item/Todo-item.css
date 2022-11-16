@@ -4,15 +4,6 @@
   padding: 0;
 }
 
-.todo-list__icon {
-  color: rgb(32, 167, 32);
-}
-
-.todo-list__icon:nth-of-type(2) {
-  color: rgb(47, 0, 255);
-}
-
-
 .todo-list__icon:hover {
   cursor: pointer;
 }
@@ -21,6 +12,11 @@
   transform: scale(0.95, 0.95);
 }
 
-.todo-list__icon:last-of-type {
-  color: rgb(192, 0, 0);
+.done-icon {
+  color: rgb(62, 214, 62);
+}
+
+.delete-icon {
+  color: rgb(199, 0, 0);
+  margin-left: 1em;
 }
