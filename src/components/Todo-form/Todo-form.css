@@ -1,8 +1,7 @@
 .todo-form__input {
-  width: 90%;
+  width: 500px;
   border: 1px solid black;
   outline: none;
-  margin-top: 3em;
   padding: 3px 10px;
   text-indent: .7em;
 }
@@ -11,8 +10,15 @@
   width: 10%;
   border: 1px solid black;
   outline: none;
-  margin-top: 3em;
   padding: 3px 0px;
-  text-indent: .7em;
-  border-left: none;
+}
+
+#addReminder-checkbox:hover {
+  color: rgb(55, 103, 236);
+  cursor: pointer;
+}
+
+#addReminder-checkbox:active {
+  transform: scale(0.95, 0.95);
+
 }

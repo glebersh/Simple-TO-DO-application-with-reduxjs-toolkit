@@ -7,7 +7,7 @@ import './App.css';
 
 import { Box } from '@chakra-ui/react';
 
-import { fetchTodos } from '../slices/Todo-slice';
+import { fetchTodos } from '../slices/todoSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import ErrorBoundary from '../error-boundary/error-boundary';
 import Sidebar from '../Sidebar/Sidebar';
@@ -22,8 +22,8 @@ const App = () => {
     <ErrorBoundary>
       <Box className='app'>
         <Sidebar />
-        {/* {loadingStatus === 'loading' && <h2>Loading...</h2>}
-        {errorStatus && <h2>Error...</h2>} */}
+        {loadingStatus === 'loading' && <h2>Loading...</h2>}
+        {errorStatus && <h2>Error...</h2>}
         <Box display='inline-block' width='70%' m='0 auto 0 0'>
           <button onClick={() => dispatch(fetchTodos())}>Get data from API</button>
           <FilterBlock />

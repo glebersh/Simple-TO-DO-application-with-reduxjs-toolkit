@@ -1,0 +1,60 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Eat",
+      "completed": false,
+      "priority": "Low",
+      "date": null
+    },
+    {
+      "id": 2,
+      "title": "Sleep",
+      "completed": false,
+      "priority": "Low",
+      "date": null
+    },
+    {
+      "id": 3,
+      "title": "Drink",
+      "completed": false,
+      "priority": "Low",
+      "date": null
+    },
+    {
+      "id": 4,
+      "title": "Enjoy yourself",
+      "completed": false,
+      "priority": "Low",
+      "date": null
+    },
+    {
+      "id": 5,
+      "title": "Learn Redux",
+      "completed": false,
+      "priority": "Low",
+      "date": null
+    },
+    {
+      "id": 6,
+      "title": "Have fun",
+      "completed": false,
+      "priority": "Low",
+      "date": null
+    },
+    {
+      "title": "Listen to my favorite group music",
+      "completed": false,
+      "date": null,
+      "priority": "Low",
+      "id": 7
+    },
+    {
+      "title": "Watch some movies",
+      "completed": false,
+      "date": null,
+      "priority": "Low",
+      "id": 8
+    }
+  ]
+}

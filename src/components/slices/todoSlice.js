@@ -5,7 +5,7 @@ export const fetchTodos = createAsyncThunk(
   async function (_, { rejectWithValue }) {
     try {
       const response = await
-        fetch('https://jsonplaceholder.typicode.com/todos?_limit=20');
+        fetch('http://localhost:3004/todos/');
 
       if (!response.ok) {
         throw new Error('Server error!');
@@ -24,7 +24,7 @@ export const deleteTodo = createAsyncThunk(
   'todo/deleteTodo',
   async function (id, { rejectWithValue, dispatch }) {
     try {
-      const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`,
+      const response = await fetch(`http://localhost:3004/todos/${id}`,
         {
           method: 'DELETE',
         }
@@ -44,7 +44,7 @@ export const toggleCompleteState = createAsyncThunk(
   async function (id, { rejectWithValue, dispatch, getState }) {
     const todoItem = getState().todoReducer.todo.find(todo => todo.id === id);
     try {
-      const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`,
+      const response = await fetch(`http://localhost:3004/todos/${id}`,
         {
           method: 'PATCH',
           headers: {
@@ -67,14 +67,16 @@ export const toggleCompleteState = createAsyncThunk(
 
 export const addItemAsync = createAsyncThunk(
   'todo/addItemAsync',
-  async function (text, { rejectWithValue, dispatch }) {
+  async function ({ text, reminderDate }, { rejectWithValue, dispatch }) {
     try {
       const newTask = {
         title: text,
         completed: false,
         userId: 1,
+        date: reminderDate,
+        priority: 'Low',
       };
-      const response = await fetch(`https://jsonplaceholder.typicode.com/todos/`,
+      const response = await fetch(`http://localhost:3004/todos/`,
         {
           method: 'POST',
           headers: {
@@ -99,7 +101,7 @@ export const editTextAsync = createAsyncThunk(
   'todo/editTextAsync',
   async function ({ id, editedText }, { rejectWithValue, dispatch }) {
     try {
-      const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`,
+      const response = await fetch(`http://localhost:3004/todos/${id}`,
         {
           method: 'PATCH',
           headers: {
@@ -124,14 +126,7 @@ export const editTextAsync = createAsyncThunk(
 const todoSlice = createSlice({
   name: 'todos',
   initialState: {
-    todo: [
-      { id: 1, title: 'eat', completed: false, priority: 'Low' },
-      { id: 2, title: 'sleep', completed: false, priority: 'Low' },
-      { id: 3, title: 'drink', completed: false, priority: 'Low' },
-      { id: 4, title: 'maybe drink again', completed: false, priority: 'Low' },
-      { id: 5, title: 'learn redux', completed: false, priority: 'Low' },
-      { id: 6, title: 'have fun', completed: false, priority: 'Low' },
-    ],
+    todo: [],
     loadingStatus: null,
     errorStatus: null,
   },
@@ -157,9 +152,7 @@ const todoSlice = createSlice({
     togglePriority(state, action) {
       const neededItem = state.todo.find(item => item.id === action.payload.id);
       neededItem.priority = action.payload.priority;
-      console.log(neededItem.priority);
     },
-
   },
   extraReducers: {
     [fetchTodos.pending]: (state) => {

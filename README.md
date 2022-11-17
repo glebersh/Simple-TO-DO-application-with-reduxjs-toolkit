@@ -7,9 +7,8 @@ _Currently in work_
 * Redux Toolkit
 * Chakra UI & Chakra UI Theme Tools
 * Bootstrap Icons
-
-## API 
-[JSONPlaceholder](https://jsonplaceholder.typicode.com/)
+* Day.js
+* JSON Server 
 
 ## Contacts
 * [GitHub Profile](https://github.com/glebersh)

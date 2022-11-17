@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import './Todo-item.css';
 import { useDispatch } from 'react-redux';
-import { deleteTodo, toggleCompleteState, editTextAsync, togglePriority } from '../slices/Todo-slice';
+import { deleteTodo, toggleCompleteState, editTextAsync, togglePriority } from '../slices/todoSlice';
 import { Flex, Select } from '@chakra-ui/react';
 
 const TodoItem = (props) => {
-  const { id, title, completed, priority } = props;
+  const { id, title, completed } = props;
   const dispatch = useDispatch();
   const [isEditing, setEditingStatus] = useState(false);
   const [editedText, setEditedText] = useState(props.title);
+  const [priority, setPriority] = useState('Low');
 
   useEffect(() => {
     setEditingStatus(false);
   }, [title])
+
+  const togglePr = (text) => {
+    console.log(text);
+    dispatch(togglePriority({ id, priority: text }));
+  };
 
 
   return (
@@ -33,13 +39,13 @@ const TodoItem = (props) => {
           <i className="bi-pencil todo-list__icon edit-icon" onClick={() => setEditingStatus(!isEditing)}></i>
           <i className="bi-trash todo-list__icon delete-icon" onClick={() => dispatch(deleteTodo(id))}></i>
 
-          <Select onChange={(e) => dispatch(togglePriority({ id, priority: e.target.value }))} ml='1em'
-            size='sm'
-            variant='outline' placeholder={priority ? priority : null}>
+          <select onChange={(e) => togglePr(e.target.value)} ml='1em'
+            size='sm' variant='outline'>
+            <option disabled></option>
             <option value='Low'>Low</option>
             <option value='Medium'>Medium</option>
             <option value='High'>High</option>
-          </Select>
+          </select>
         </Flex>
       </Flex>
     </li >
