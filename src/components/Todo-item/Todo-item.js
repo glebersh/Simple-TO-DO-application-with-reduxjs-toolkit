@@ -9,16 +9,10 @@ const TodoItem = (props) => {
   const dispatch = useDispatch();
   const [isEditing, setEditingStatus] = useState(false);
   const [editedText, setEditedText] = useState(props.title);
-  const [priority, setPriority] = useState('Low');
 
   useEffect(() => {
     setEditingStatus(false);
   }, [title])
-
-  const togglePr = (text) => {
-    console.log(text);
-    dispatch(togglePriority({ id, priority: text }));
-  };
 
 
   return (
@@ -39,13 +33,12 @@ const TodoItem = (props) => {
           <i className="bi-pencil todo-list__icon edit-icon" onClick={() => setEditingStatus(!isEditing)}></i>
           <i className="bi-trash todo-list__icon delete-icon" onClick={() => dispatch(deleteTodo(id))}></i>
 
-          <select onChange={(e) => togglePr(e.target.value)} ml='1em'
+          <Select onChange={(e) => dispatch(togglePriority({ id, priority: e.target.value }))} ml='1em'
             size='sm' variant='outline'>
-            <option disabled></option>
             <option value='Low'>Low</option>
             <option value='Medium'>Medium</option>
             <option value='High'>High</option>
-          </select>
+          </Select>
         </Flex>
       </Flex>
     </li >

@@ -5,7 +5,6 @@ import { addItemAsync } from '../slices/todoSlice';
 import { Flex } from '@chakra-ui/react';
 import { PlusSquareIcon } from '@chakra-ui/icons';
 import dayjs from 'dayjs';
-import { changeDateFilter } from '../slices/dateSlice';
 
 const TodoForm = () => {
   const [text, setText] = useState('');
@@ -32,7 +31,7 @@ const TodoForm = () => {
         />
       </label>
       <PlusSquareIcon id='addReminder-checkbox' w='24px' h='24px' color='#1e90ff'
-        onClick={() => showReminderInput(!reminderInput)}></PlusSquareIcon>+
+        onClick={() => showReminderInput(!reminderInput)}></PlusSquareIcon>
 
       {reminderInput ?
         <input type='date' min={minDate}
