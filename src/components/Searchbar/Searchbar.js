@@ -2,30 +2,27 @@ import React, { useEffect, useState } from 'react'
 import './Searchbar.css';
 import { changeSearchFilter } from '../slices/searchSlice';
 import { useDispatch } from 'react-redux';
+import { Input, InputGroup, InputRightAddon } from '@chakra-ui/react';
+import { SearchIcon } from '@chakra-ui/icons';
 
 const Searchbar = () => {
 
   const dispatch = useDispatch();
   const [searchtext, setSearchText] = useState('');
 
-  // const searchFilterList = (text) => {
-  //   setSearchText(text);
-  //   dispatch(changeSearchFilter(searchtext));
-  // };
-
   useEffect(() => {
     dispatch(changeSearchFilter(searchtext));
   }, [searchtext]);
 
   return (
-    <label className='searchbar__label'
-      htmlFor='searchbar'>
-      <input className='searchbar__input' id='search'
-        type='search'
-        placeholder="Search"
+    <InputGroup mt='3em'>
+      <Input id='search' icon={<SearchIcon />}
+        placeholder="Search by task..."
         value={searchtext} onChange={(e) => setSearchText(e.target.value)}
+        borderColor='rgb(122,122,122)'
       />
-    </label>
+      <InputRightAddon children={<SearchIcon />} bgColor='transparent' borderColor='rgb(122,122,122)' />
+    </InputGroup>
   )
 };
 

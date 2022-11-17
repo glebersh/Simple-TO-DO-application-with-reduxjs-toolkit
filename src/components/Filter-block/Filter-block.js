@@ -1,32 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Filter-block.css';
 import { changeFilter } from '../slices/filterSlice';
 import { useDispatch } from 'react-redux';
 
-import { Flex } from '@chakra-ui/react';
+import { Box, Button, Flex } from '@chakra-ui/react';
 
 
 const FilterBlock = () => {
   const dispatch = useDispatch();
+  const [activeBtn, setActiveBtn] = useState();
+
+  const handlerFilter = (e, filter) => {
+    setActiveBtn(e.target.id);
+    dispatch(changeFilter(filter));
+  };
 
   return (
-    <>
-      <h2>Filter your tasks: </h2>
+    <Box mt='2em'>
+      <h2 style={{ 'fontSize': '1.25em' }}>Filter tasks: </h2>
       <Flex direction='row'
         justify='space-around'
         bg='gray.800'
         padding='10px'>
-        <button className='filter-block__filter-button'
-          onClick={() => dispatch(changeFilter('all'))}>
-          All</button>
-        <button className='filter-block__filter-button'
-          onClick={() => dispatch(changeFilter('active'))}>
-          Active</button>
-        <button className='filter-block__filter-button'
-          onClick={() => dispatch(changeFilter('completed'))}>
-          Done</button>
+        <Button className={activeBtn === 'btn-1' ? 'active-btn' : ''}
+          id='btn-1'
+          variant='outline' color='white' minW='120px'
+          onClick={(e) => handlerFilter(e, 'all')}>
+          All</Button>
+        <Button className={activeBtn === 'btn-2' ? 'active-btn' : ''}
+          id='btn-2'
+          variant='outline' color='white' minW='120px'
+          onClick={(e) => handlerFilter(e, 'active')}>
+          Active</Button>
+        <Button className={activeBtn === 'btn-3' ? 'active-btn' : ''}
+          id='btn-3'
+          variant='outline' color='white' minW='120px'
+          onClick={(e) => handlerFilter(e, 'completed')}>
+          Done</Button>
       </Flex >
-    </>
+    </Box>
   )
 };
 

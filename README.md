@@ -7,8 +7,7 @@ _Currently in work_
 ## Tech Stack & Tools
 * React
 * Redux Toolkit
-* Chakra UI & Chakra UI Theme Tools
-* Bootstrap Icons
+* Chakra UI & Chakra UI Theme Tools & Chakra Icons
 * Day.js
 * JSON Server 
 

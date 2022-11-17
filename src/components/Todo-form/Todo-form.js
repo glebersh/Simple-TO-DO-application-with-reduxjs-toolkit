@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import './Todo-form.css';
 import { addItemAsync } from '../slices/todoSlice';
-import { Flex } from '@chakra-ui/react';
+import { Flex, Input } from '@chakra-ui/react';
 import { PlusSquareIcon } from '@chakra-ui/icons';
 import dayjs from 'dayjs';
 
@@ -25,10 +25,9 @@ const TodoForm = () => {
     <Flex align='center' justify='center' w='100%' mt='1em'>
       <label htmlFor='text-input'
         className='todo-form__label'>
-        <input id='text-input'
+        <Input id='text-input'
           className='todo-form__input'
-          type='text' value={text} onChange={(e) => setText(e.target.value)}
-        />
+          type='text' value={text} onChange={(e) => setText(e.target.value)} />
       </label>
       <PlusSquareIcon id='addReminder-checkbox' w='24px' h='24px' color='#1e90ff'
         onClick={() => showReminderInput(!reminderInput)}></PlusSquareIcon>

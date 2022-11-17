@@ -1,11 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
+export const localPortNum = 3001;
+
 export const fetchTodos = createAsyncThunk(
   'todo/fetchTodos',
   async function (_, { rejectWithValue }) {
     try {
       const response = await
-        fetch('http://localhost:3004/todos/');
+        fetch(`http://localhost:${localPortNum}/todos/`);
 
       if (!response.ok) {
         throw new Error('Server error!');
@@ -24,7 +26,7 @@ export const deleteTodo = createAsyncThunk(
   'todo/deleteTodo',
   async function (id, { rejectWithValue, dispatch }) {
     try {
-      const response = await fetch(`http://localhost:3004/todos/${id}`,
+      const response = await fetch(`http://localhost:${localPortNum}/todos/${id}`,
         {
           method: 'DELETE',
         }
@@ -44,7 +46,7 @@ export const toggleCompleteState = createAsyncThunk(
   async function (id, { rejectWithValue, dispatch, getState }) {
     const todoItem = getState().todoReducer.todo.find(todo => todo.id === id);
     try {
-      const response = await fetch(`http://localhost:3004/todos/${id}`,
+      const response = await fetch(`http://localhost:${localPortNum}/todos/${id}`,
         {
           method: 'PATCH',
           headers: {
@@ -76,7 +78,7 @@ export const addItemAsync = createAsyncThunk(
         date: reminderDate,
         priority: 'Low',
       };
-      const response = await fetch(`http://localhost:3004/todos/`,
+      const response = await fetch(`http://localhost:${localPortNum}/todos/`,
         {
           method: 'POST',
           headers: {
@@ -101,7 +103,7 @@ export const editTextAsync = createAsyncThunk(
   'todo/editTextAsync',
   async function ({ id, editedText }, { rejectWithValue, dispatch }) {
     try {
-      const response = await fetch(`http://localhost:3004/todos/${id}`,
+      const response = await fetch(`http://localhost:${localPortNum}/todos/${id}`,
         {
           method: 'PATCH',
           headers: {

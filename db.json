@@ -48,13 +48,18 @@
       "date": null,
       "priority": "Low",
       "id": 7
+    }
+  ],
+  "users": [
+    {
+      "login": "login",
+      "password": "password",
+      "id": 1
     },
     {
-      "title": "Watch some movies",
-      "completed": false,
-      "date": null,
-      "priority": "Low",
-      "id": 8
+      "login": "login",
+      "password": "password",
+      "id": 2
     }
   ]
 }

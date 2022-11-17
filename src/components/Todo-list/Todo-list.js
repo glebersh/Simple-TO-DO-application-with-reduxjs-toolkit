@@ -12,8 +12,8 @@ const TodoList = () => {
   const content = listItems.map((item) => <TodoItem key={item.id} {...item} />);
 
   return (
-    <ul>
-      <Select onChange={(e) => dispatch(changePriorityFilter(e.target.value))}>
+    <ul className='todo-items-list'>
+      <Select onChange={(e) => dispatch(changePriorityFilter(e.target.value))} w='20%' minW='200px'>
         <option value='All'>All</option>
         <option value='Low'>Low</option>
         <option value='Medium'>Medium</option>

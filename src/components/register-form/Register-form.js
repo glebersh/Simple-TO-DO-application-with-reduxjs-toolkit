@@ -1,7 +1,7 @@
 import { Flex } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addUser } from '../slices/usersSlice';
+import { addUserAsync } from '../slices/usersSlice';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ const RegisterForm = () => {
     <Flex direction='column' mt='5em' justify='space-between' h='100px'>
       <input type='text' onChange={(e) => setLogin(e.target.value)}></input>
       <input type='password' onChange={(e) => setPassword(e.target.value)}></input>
-      <input type='submit' onClick={() => dispatch(addUser({ login, password }))}></input>
+      <input type='submit' onClick={() => dispatch(addUserAsync({ login, password }))}></input>
     </Flex >
   )
 };
