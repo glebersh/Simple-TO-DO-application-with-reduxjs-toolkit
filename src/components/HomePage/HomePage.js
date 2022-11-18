@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import FilterBlock from '../Filter-block';
 import Searchbar from '../Searchbar';
 import TodoForm from '../Todo-form';
@@ -18,10 +18,16 @@ const HomePage = () => {
     errorStatus } = useSelector(state => state.todoReducer);
 
   const { isAuth, email } = useAuthentification();
-
   const navigate = useNavigate();
 
-  if (!isAuth) {
+  useEffect(() => {
+    if (isAuth === false) {
+      navigate('/login');
+    }
+  }, []);
+
+
+  if (isAuth === false) {
     navigate('/login');
   }
   else {
@@ -42,4 +48,5 @@ const HomePage = () => {
     )
   }
 };
+
 export default HomePage;

@@ -3,12 +3,14 @@ import './App.css';
 import { Box } from '@chakra-ui/react';
 import ErrorBoundary from '../error-boundary/error-boundary';
 import HomePage from '../HomePage';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import LoginPage from '../LoginPage/LoginPage';
+import { useAuthentification } from '../hooks/useAuthentification';
 
 
 const App = () => {
+
   return (
     <ErrorBoundary>
       <Box className='app'>
