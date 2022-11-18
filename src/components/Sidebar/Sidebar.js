@@ -5,8 +5,9 @@ import { useDispatch } from 'react-redux';
 import { changeDateFilter } from '../slices/dateSlice';
 import { CalendarIcon, BellIcon, TimeIcon, SunIcon, MoonIcon } from '@chakra-ui/icons';
 import dayjs from 'dayjs';
+import { removeUser } from '../slices/usersSlice';
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const dispatch = useDispatch();
   const today = dayjs().format("YYYY-MM-DD");
@@ -16,7 +17,11 @@ const Sidebar = () => {
     <Flex className='sidebar' direction='column'>
       <Flex m='3em auto 0' align='center'>
         <Avatar size='md' mr='1em' />
-        <span>First Name / Last Name</span>
+        <Flex direction='column'>
+          <span>{props.userEmail}</span>
+          <Button variant='link' colorScheme='black'
+            onClick={() => dispatch(removeUser())}>Log out</Button>
+        </Flex>
       </Flex>
       <Button onClick={toggleColorMode} w='30%' m='3em auto 0'
         display='block'
