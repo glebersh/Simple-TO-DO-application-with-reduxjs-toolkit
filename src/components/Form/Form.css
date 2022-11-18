@@ -1,0 +1,16 @@
+.auth-title {
+  font-size: 3em;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.auth-link {
+  color: rgb(47, 117, 221);
+  transition: 0.33s;
+}
+
+.auth-link:hover {
+  color: rgb(33, 87, 167);
+  text-decoration: underline;
+  transition: 0.33s;
+}

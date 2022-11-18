@@ -22,13 +22,6 @@
       "date": null
     },
     {
-      "id": 4,
-      "title": "Enjoy yourself",
-      "completed": false,
-      "priority": "Low",
-      "date": null
-    },
-    {
       "id": 5,
       "title": "Learn Redux",
       "completed": false,
@@ -55,11 +48,6 @@
       "login": "login",
       "password": "password",
       "id": 1
-    },
-    {
-      "login": "login",
-      "password": "password",
-      "id": 2
     }
   ]
 }

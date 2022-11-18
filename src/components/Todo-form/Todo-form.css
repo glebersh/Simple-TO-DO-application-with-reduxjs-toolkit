@@ -13,12 +13,17 @@
   padding: 3px 0px;
 }
 
+#addReminder-checkbox {
+  margin-left: 1em;
+  color: rgb(47, 117, 221);
+  font-size: 24px;
+}
+
 #addReminder-checkbox:hover {
-  color: rgb(55, 103, 236);
+  color: rgb(41, 92, 235);
   cursor: pointer;
 }
 
 #addReminder-checkbox:active {
   transform: scale(0.95, 0.95);
-
 }

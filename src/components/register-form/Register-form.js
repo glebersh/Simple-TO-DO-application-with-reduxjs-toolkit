@@ -1,19 +1,48 @@
-import { Flex } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addUserAsync } from '../slices/usersSlice';
+import Form from '../Form';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { addUser } from '../slices/usersSlice';
+import { useNavigate } from 'react-router-dom';
+import { Alert, AlertIcon } from '@chakra-ui/react';
+
 
 const RegisterForm = () => {
+  let navigate = useNavigate();
   const dispatch = useDispatch();
+  const [isError, setErrorState] = useState(false);
 
-  const [login, setLogin] = useState('');
-  const [password, setPassword] = useState('');
+  const handleRegister = (email, password) => {
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(({ user }) => {
+        dispatch(addUser({
+          email: user.email,
+          id: user.uid,
+          token: user.accessToken,
+        }))
+        setErrorState(false);
+      })
+      .catch(() => setErrorState(true));
+    navigate('/');
+  };
+
+
   return (
-    <Flex direction='column' mt='5em' justify='space-between' h='100px'>
-      <input type='text' onChange={(e) => setLogin(e.target.value)}></input>
-      <input type='password' onChange={(e) => setPassword(e.target.value)}></input>
-      <input type='submit' onClick={() => dispatch(addUserAsync({ login, password }))}></input>
-    </Flex >
+    <>
+      <Form title='Sign up'
+        formHandler={handleRegister} />
+
+      {isError ? <Alert status='error'>
+        <AlertIcon />
+        There was an error processing your request
+      </Alert>
+        :
+        <Alert status='success'>
+          <AlertIcon />
+          You have successfully created an account
+        </Alert>}
+    </>
   )
 };
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Todo-item.css';
 import { useDispatch } from 'react-redux';
 import { deleteTodo, toggleCompleteState, editTextAsync, togglePriority } from '../slices/todoSlice';
-import { Flex, Select, Tooltip } from '@chakra-ui/react';
+import { Button, Flex, Input, Select, Tooltip } from '@chakra-ui/react';
 import { DeleteIcon, CheckIcon, EditIcon } from '@chakra-ui/icons';
 
 const TodoItem = (props) => {
@@ -19,15 +19,19 @@ const TodoItem = (props) => {
   return (
     <li className='todo-item'>
       <Flex justify='space-between' fontSize='1.2em' align='center'>
-        <Tooltip label='Mark as complete'>
+        <Tooltip label={completed ? 'Mark as unfulfilled' : 'Mark as done'}>
           <CheckIcon className="todo-item__icon"
-            onClick={() => dispatch(toggleCompleteState(id))} color='chartreuse'></CheckIcon>
+            onClick={() => dispatch(toggleCompleteState(id))}
+            color={completed ? 'chartreuse' : 'darkgray'}></CheckIcon>
         </Tooltip>
         {isEditing ?
           <>
-            <input type='text' value={editedText}
+            <Input type='text' value={editedText} w='70%'
               onChange={(e) => setEditedText(e.target.value)} />
-            <button onClick={() => dispatch(editTextAsync({ id, editedText }))}>Confirm</button>
+            <Button onClick={() => dispatch(editTextAsync({ id, editedText }))}
+              bgColor='rgb(47, 117, 221)'
+              color='white'
+            >Confirm</Button>
           </> :
           <span style={completed ? { 'textDecoration': 'line-through' } :
             { 'textDecoration': 'none' }} className="todo-list__text">{title}</span>}
@@ -43,12 +47,14 @@ const TodoItem = (props) => {
               onClick={() => dispatch(deleteTodo(id))} color='red'></DeleteIcon>
           </Tooltip>
 
-          <Select onChange={(e) => dispatch(togglePriority({ id, priority: e.target.value }))} ml='1em'
-            size='sm' variant='outline'>
-            <option value='Low'>Low</option>
-            <option value='Medium'>Medium</option>
-            <option value='High'>High</option>
-          </Select>
+          <Tooltip label='Change priority'>
+            <Select onChange={(e) => dispatch(togglePriority({ id, priority: e.target.value }))} ml='1em'
+              size='sm' variant='outline'>
+              <option value='Low'>Low</option>
+              <option value='Medium'>Medium</option>
+              <option value='High'>High</option>
+            </Select>
+          </Tooltip>
         </Flex>
       </Flex>
     </li >

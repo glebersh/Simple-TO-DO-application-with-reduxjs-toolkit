@@ -19,6 +19,7 @@ const Sidebar = () => {
         <span>First Name / Last Name</span>
       </Flex>
       <Button onClick={toggleColorMode} w='30%' m='3em auto 0'
+        display='block'
         variant='outline'>
         {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
       </Button>

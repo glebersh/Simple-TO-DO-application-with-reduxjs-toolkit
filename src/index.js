@@ -4,6 +4,8 @@ import App from './components/App';
 import { Provider } from 'react-redux';
 import store from './components/store';
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
+import { BrowserRouter } from 'react-router-dom';
+import './firebase';
 
 import theme from './components/theme/theme'
 
@@ -14,9 +16,11 @@ root.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <BrowserRouter>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </BrowserRouter>
     </ChakraProvider>
   </React.StrictMode>
 );

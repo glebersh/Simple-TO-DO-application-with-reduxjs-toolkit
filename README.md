@@ -10,6 +10,9 @@ _Currently in work_
 * Chakra UI & Chakra UI Theme Tools & Chakra Icons
 * Day.js
 * JSON Server 
+* Bootstrap Icons
+* React-router DOM
+* Google Firebase
 
 ## Contacts
 * [GitHub Profile](https://github.com/glebersh)
