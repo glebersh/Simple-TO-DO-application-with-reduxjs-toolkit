@@ -1,5 +1,4 @@
 .todo-form__input {
-  width: 500px;
   border: 1px solid black;
   outline: none;
   padding: 3px 10px;
@@ -26,4 +25,10 @@
 
 #addReminder-checkbox:active {
   transform: scale(0.95, 0.95);
+}
+
+@media screen and (max-width: 480px) {
+  #addReminder-checkbox {
+    margin-left: 0;
+  }
 }

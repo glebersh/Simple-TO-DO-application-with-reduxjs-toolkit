@@ -5,6 +5,11 @@
   border-bottom: 1px solid rgba(143, 143, 143, 0.2);
 }
 
+.todo-list__text {
+  margin-left: 3em;
+  width: 70%;
+}
+
 .todo-item:first-of-type {
   margin-top: 1em;
 }
@@ -15,4 +20,12 @@
 
 .todo-item__icon:active {
   transform: scale(0.95, 0.95);
+}
+
+
+@media (min-width:320px) and (max-width: 480px) {
+  .todo-list__text {
+    width: 80%;
+    margin-left: 1em;
+  }
 }

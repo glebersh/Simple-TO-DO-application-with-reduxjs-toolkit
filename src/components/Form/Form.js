@@ -20,6 +20,8 @@ const Form = ({ title, formHandler }) => {
       <Input type='password' w='300px' id='password-input'
         onChange={(e) => setPassword(e.target.value)}
         required />
+
+
       <Button variant='outline' w='100px' mt='3em'
         onClick={() => formHandler(email, password)}>{title}</Button>
     </Flex>

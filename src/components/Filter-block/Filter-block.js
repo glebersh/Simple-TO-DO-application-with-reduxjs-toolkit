@@ -20,21 +20,23 @@ const FilterBlock = () => {
       <h2 style={{ 'fontSize': '1.25em' }}>Filter tasks: </h2>
       <Flex direction='row'
         justify='space-around'
-        bg='gray.800'
+        border='1px solid'
+        bg='transparent'
         padding='10px'>
         <Button className={activeBtn === 'btn-1' ? 'active-btn' : ''}
           id='btn-1'
-          variant='outline' color='white' minW='120px'
+          variant='outline'
+          w={{ xs: '80px', s: '120px' }}
           onClick={(e) => handlerFilter(e, 'all')}>
           All</Button>
         <Button className={activeBtn === 'btn-2' ? 'active-btn' : ''}
           id='btn-2'
-          variant='outline' color='white' minW='120px'
+          variant='outline' w={{ xs: '80px', s: '120px' }}
           onClick={(e) => handlerFilter(e, 'active')}>
           Active</Button>
         <Button className={activeBtn === 'btn-3' ? 'active-btn' : ''}
           id='btn-3'
-          variant='outline' color='white' minW='120px'
+          variant='outline' w={{ xs: '80px', s: '120px' }}
           onClick={(e) => handlerFilter(e, 'completed')}>
           Done</Button>
       </Flex >

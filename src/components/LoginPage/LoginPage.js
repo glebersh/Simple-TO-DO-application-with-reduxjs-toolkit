@@ -8,7 +8,7 @@ const LoginPage = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Flex direction='column' align='center'>
-      <Button onClick={toggleColorMode} w='30%' mt='1em'
+      <Button onClick={toggleColorMode} w='100px' mt='1em'
         variant='outline'>
         {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
       </Button>

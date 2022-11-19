@@ -27,20 +27,6 @@
       "completed": false,
       "priority": "Low",
       "date": null
-    },
-    {
-      "id": 6,
-      "title": "Have fun",
-      "completed": false,
-      "priority": "Low",
-      "date": null
-    },
-    {
-      "title": "Listen to my favorite group music",
-      "completed": false,
-      "date": null,
-      "priority": "Low",
-      "id": 7
     }
   ],
   "users": [

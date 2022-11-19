@@ -6,13 +6,7 @@ import { Input, InputGroup, InputRightAddon } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 
 const Searchbar = () => {
-
-  const dispatch = useDispatch();
   const [searchtext, setSearchText] = useState('');
-
-  useEffect(() => {
-    dispatch(changeSearchFilter(searchtext));
-  }, [searchtext]);
 
   return (
     <InputGroup mt='3em'>

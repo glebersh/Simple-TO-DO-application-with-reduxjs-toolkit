@@ -21,10 +21,9 @@ const RegisterForm = () => {
           id: user.uid,
           token: user.accessToken,
         }))
-        setErrorState(false);
+        navigate('/');
       })
       .catch(() => setErrorState(true));
-    navigate('/');
   };
 
 
@@ -32,8 +31,7 @@ const RegisterForm = () => {
     <>
       <Form title='Sign up'
         formHandler={handleRegister} />
-
-      {isError ? <Alert status='error'>
+      {/* {isError ? <Alert status='error'>
         <AlertIcon />
         There was an error processing your request
       </Alert>
@@ -41,7 +39,7 @@ const RegisterForm = () => {
         <Alert status='success'>
           <AlertIcon />
           You have successfully created an account
-        </Alert>}
+        </Alert>} */}
     </>
   )
 };

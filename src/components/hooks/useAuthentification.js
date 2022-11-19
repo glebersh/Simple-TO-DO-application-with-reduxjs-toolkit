@@ -7,7 +7,6 @@ function isEmptyObject(obj) {
 
 export function useAuthentification() {
   const { email, token, id } = useSelector(state => state.users);
-  console.log(email);
 
   return {
     isAuth: !!email,

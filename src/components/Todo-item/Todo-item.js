@@ -18,7 +18,8 @@ const TodoItem = (props) => {
 
   return (
     <li className='todo-item'>
-      <Flex justify='space-between' fontSize='1.2em' align='center'>
+      <Flex justify='flex-start' fontSize='1.2em' align='center'
+        flexWrap='wrap'>
         <Tooltip label={completed ? 'Mark as unfulfilled' : 'Mark as done'}>
           <CheckIcon className="todo-item__icon"
             onClick={() => dispatch(toggleCompleteState(id))}
@@ -27,16 +28,28 @@ const TodoItem = (props) => {
         {isEditing ?
           <>
             <Input type='text' value={editedText} w='70%'
+              ml={{
+                xs: '1em', s: '1em',
+                md: '3em', lg: '3.5em',
+                xl: '3.5em', xll: '3.5em'
+              }}
               onChange={(e) => setEditedText(e.target.value)} />
             <Button onClick={() => dispatch(editTextAsync({ id, editedText }))}
-              bgColor='rgb(47, 117, 221)'
-              color='white'
-            >Confirm</Button>
+              color='white'>Confirm</Button>
           </> :
           <span style={completed ? { 'textDecoration': 'line-through' } :
             { 'textDecoration': 'none' }} className="todo-list__text">{title}</span>}
 
-        <Flex align='center'>
+        <Flex align='center' w={{
+          xs: '100%', s: '100%',
+          md: '100%', lg: '20%',
+          xl: '18%', xll: '18%'
+        }}
+          mt={{
+            xs: '1.5em', s: '1.5em',
+            md: '1.5em', lg: '0',
+            xl: '0', xll: '0'
+          }}>
           <Tooltip label='Edit'>
             <EditIcon className="todo-item__icon"
               onClick={() => setEditingStatus(!isEditing)}
@@ -48,7 +61,9 @@ const TodoItem = (props) => {
           </Tooltip>
 
           <Tooltip label='Change priority'>
-            <Select onChange={(e) => dispatch(togglePriority({ id, priority: e.target.value }))} ml='1em'
+            <Select onChange={(e) =>
+              dispatch(togglePriority({ id, priority: e.target.value }))}
+              ml='1em'
               size='sm' variant='outline'>
               <option value='Low'>Low</option>
               <option value='Medium'>Medium</option>

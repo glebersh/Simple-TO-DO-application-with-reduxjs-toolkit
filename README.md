@@ -13,6 +13,7 @@ _Currently in work_
 * Bootstrap Icons
 * React-router DOM
 * Google Firebase
+* React Pro Sidebar
 
 ## Contacts
 * [GitHub Profile](https://github.com/glebersh)

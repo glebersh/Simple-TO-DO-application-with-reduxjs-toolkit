@@ -5,11 +5,13 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Alert, AlertIcon } from '@chakra-ui/react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
   let navigate = useNavigate();
   const [isError, setErrorState] = useState('');
+
 
   const handleLogin = (email, password) => {
     const auth = getAuth();
