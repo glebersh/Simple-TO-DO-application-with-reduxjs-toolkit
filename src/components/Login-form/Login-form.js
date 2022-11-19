@@ -1,46 +1,37 @@
-import React, { useState } from 'react';
-import Form from '../Form';
-import { addUser } from '../slices/usersSlice';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import React from 'react';
+
 import { useDispatch } from 'react-redux';
+
+import Form from '../Form';
+
+import { auth, signInWithEmailAndPassword } from '../../firebase';
+import { userLogin } from '../store/slices/userSlice';
 import { useNavigate } from 'react-router-dom';
-import { Alert, AlertIcon } from '@chakra-ui/react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
-  let navigate = useNavigate();
-  const [isError, setErrorState] = useState('');
+  const navigate = useNavigate();
 
-
-  const handleLogin = (email, password) => {
-    const auth = getAuth();
+  const loginToApp = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
-      .then(({ user }) => {
-        dispatch(addUser({
-          email: user.email,
-          id: user.uid,
-          token: user.accessToken,
-        }))
-        setErrorState('correct');
+      .then((userAuth) => {
+        dispatch(
+          userLogin({
+            userEmail: userAuth.user.email,
+            userId: userAuth.user.uid,
+            userAccessToken: userAuth.user.accessToken,
+          })
+        );
       })
-      .catch(() => setErrorState('error'));
-    navigate('/');
+      .then(() => navigate('/'))
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
     <>
-      <Form title='Sign in' formHandler={handleLogin} />
-      {isError === 'error' ? <Alert status='error'>
-        <AlertIcon />
-        There was an error processing your request
-      </Alert> : null}
-
-      {isError === 'correct' ?
-        <Alert status='success'>
-          <AlertIcon />
-          You have successfully logged in to your account
-        </Alert> : null}
+      <Form title='Sign in' loginHandler={loginToApp} />
     </>
   )
 };

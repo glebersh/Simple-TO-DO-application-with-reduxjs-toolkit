@@ -4,7 +4,7 @@ import TodoItem from '../Todo-item/Todo-item';
 import './Todo-list.css';
 import { selectByFilters } from '../selectors/selectors';
 import { Select } from '@chakra-ui/react';
-import { changePriorityFilter } from '../slices/prioritySlice';
+import { changePriorityFilter } from '../store/slices/prioritySlice';
 
 const TodoList = () => {
   const dispatch = useDispatch();

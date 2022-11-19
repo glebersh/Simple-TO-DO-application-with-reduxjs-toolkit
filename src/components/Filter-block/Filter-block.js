@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import './Filter-block.css';
-import { changeFilter } from '../slices/filterSlice';
+
+import { changeFilter } from '../store/slices/filterSlice';
 import { useDispatch } from 'react-redux';
 
 import { Box, Button, Flex } from '@chakra-ui/react';
 
+import './Filter-block.css';
 
 const FilterBlock = () => {
   const dispatch = useDispatch();

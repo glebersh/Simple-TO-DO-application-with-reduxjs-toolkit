@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Todo-item.css';
 import { useDispatch } from 'react-redux';
-import { deleteTodo, toggleCompleteState, editTextAsync, togglePriority } from '../slices/todoSlice';
+import { deleteTodo, toggleCompleteState, editTextAsync, togglePriority } from '../store/slices/todoSlice';
 import { Button, Flex, Input, Select, Tooltip } from '@chakra-ui/react';
 import { DeleteIcon, CheckIcon, EditIcon } from '@chakra-ui/icons';
 
@@ -27,7 +27,12 @@ const TodoItem = (props) => {
         </Tooltip>
         {isEditing ?
           <>
-            <Input type='text' value={editedText} w='70%'
+            <Input type='text' value={editedText}
+              w={{
+                xs: '80%', s: '70%',
+                md: '60%', lg: '60%',
+                xl: '60%', xll: '60%'
+              }}
               ml={{
                 xs: '1em', s: '1em',
                 md: '3em', lg: '3.5em',
@@ -35,7 +40,11 @@ const TodoItem = (props) => {
               }}
               onChange={(e) => setEditedText(e.target.value)} />
             <Button onClick={() => dispatch(editTextAsync({ id, editedText }))}
-              color='white'>Confirm</Button>
+              color='white' m={{
+                xs: '1em auto 0', s: '0 auto',
+                md: '0 0 0 1em', lg: '0 0 1em 1em',
+                xl: '0 1em 1em 1em', xll: '0 1em 0 1em'
+              }}>Confirm</Button>
           </> :
           <span style={completed ? { 'textDecoration': 'line-through' } :
             { 'textDecoration': 'none' }} className="todo-list__text">{title}</span>}

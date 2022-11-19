@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
+
 import { useDispatch } from 'react-redux';
-import './Todo-form.css';
-import { addItemAsync } from '../slices/todoSlice';
-import { Button, Flex, Input, Tooltip, Box } from '@chakra-ui/react';
+import { addItemAsync } from '../store/slices/todoSlice';
+
+import { Button, Flex, Input, Tooltip } from '@chakra-ui/react';
 import { PlusSquareIcon } from '@chakra-ui/icons';
+
 import dayjs from 'dayjs';
+
+import './Todo-form.css';
 
 const TodoForm = () => {
   const [text, setText] = useState('');

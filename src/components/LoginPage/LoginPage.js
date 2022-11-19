@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginForm from '../Login-form/Login-form';
 import { Link } from 'react-router-dom';
-import { Flex, Box, useColorMode, Button, Alert, AlertIcon } from '@chakra-ui/react';
+import { Flex, Box, useColorMode, Button } from '@chakra-ui/react';
 import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 
 const LoginPage = () => {

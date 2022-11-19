@@ -1,8 +1,10 @@
-import { Button, Input, Flex, FormLabel } from '@chakra-ui/react';
 import React, { useState } from 'react';
+
+import { Button, Input, Flex, FormLabel } from '@chakra-ui/react';
+
 import './Form.css';
 
-const Form = ({ title, formHandler }) => {
+const Form = ({ title, loginHandler }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -23,7 +25,7 @@ const Form = ({ title, formHandler }) => {
 
 
       <Button variant='outline' w='100px' mt='3em'
-        onClick={() => formHandler(email, password)}>{title}</Button>
+        onClick={() => loginHandler(email, password)}>{title}</Button>
     </Flex>
   )
 };

@@ -1,8 +1,10 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './components/App';
-import { Provider } from 'react-redux';
+
 import store from './components/store';
+
+import { Provider } from 'react-redux';
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 import { BrowserRouter } from 'react-router-dom';
 import './firebase';

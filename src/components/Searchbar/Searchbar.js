@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import './Searchbar.css';
-import { changeSearchFilter } from '../slices/searchSlice';
-import { useDispatch } from 'react-redux';
+import React, { useState } from 'react'
+
 import { Input, InputGroup, InputRightAddon } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
+
+import './Searchbar.css';
 
 const Searchbar = () => {
   const [searchtext, setSearchText] = useState('');

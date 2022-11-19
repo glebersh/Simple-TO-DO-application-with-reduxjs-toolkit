@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import todoReducer from '../slices/todoSlice';
-import filterReducer from '../slices/filterSlice';
-import priorityReducer from '../slices/prioritySlice';
-import searchReducer from '../slices/searchSlice';
-import dateReducer from '../slices/dateSlice';
-import usersReducer from '../slices/usersSlice';
+
+import todoReducer from '../store/slices/todoSlice';
+import filterReducer from '../store/slices/filterSlice';
+import priorityReducer from '../store/slices/prioritySlice';
+import searchReducer from '../store/slices/searchSlice';
+import dateReducer from '../store/slices/dateSlice';
+import userReducer from '../store/slices/userSlice';
 
 export default configureStore({
   reducer: {
@@ -13,6 +14,6 @@ export default configureStore({
     priority: priorityReducer,
     search: searchReducer,
     date: dateReducer,
-    users: usersReducer
+    user: userReducer
   }
 });

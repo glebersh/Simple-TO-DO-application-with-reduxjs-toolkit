@@ -1,45 +1,33 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import Form from '../Form';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { addUser } from '../slices/usersSlice';
-import { useNavigate } from 'react-router-dom';
-import { Alert, AlertIcon } from '@chakra-ui/react';
+import { auth, createUserWithEmailAndPassword } from '../../firebase';
+import React from 'react';
 
+import { useDispatch } from 'react-redux';
+import { userLogin } from '../store/slices/userSlice';
+
+import Form from '../Form';
 
 const RegisterForm = () => {
-  let navigate = useNavigate();
   const dispatch = useDispatch();
-  const [isError, setErrorState] = useState(false);
 
-  const handleRegister = (email, password) => {
-    const auth = getAuth();
+  const registerToApp = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password)
-      .then(({ user }) => {
-        dispatch(addUser({
-          email: user.email,
-          id: user.uid,
-          token: user.accessToken,
-        }))
-        navigate('/');
+      .then((userAuth) => {
+        dispatch(
+          userLogin({
+            userEmail: userAuth.user.email,
+            userId: userAuth.user.uid,
+            userAccessToken: userAuth.user.accessToken,
+          })
+        );
       })
-      .catch(() => setErrorState(true));
+      .catch((err) => {
+        console.log(err);
+      });
   };
-
 
   return (
     <>
-      <Form title='Sign up'
-        formHandler={handleRegister} />
-      {/* {isError ? <Alert status='error'>
-        <AlertIcon />
-        There was an error processing your request
-      </Alert>
-        :
-        <Alert status='success'>
-          <AlertIcon />
-          You have successfully created an account
-        </Alert>} */}
+      <Form title='Sign up' loginHandler={registerToApp} />
     </>
   )
 };
