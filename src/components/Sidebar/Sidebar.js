@@ -8,6 +8,7 @@ import { CalendarIcon, BellIcon, TimeIcon, SunIcon, MoonIcon } from '@chakra-ui/
 import { Sidebar } from 'react-pro-sidebar';
 
 import { today, tomorrow } from '../../consts';
+import { userLogout } from '../store/slices/userSlice';
 
 import './Sidebar.css';
 
@@ -31,7 +32,7 @@ const SidebarMenu = () => {
           <Avatar size='md' mr='1em' />
           <Flex direction='column'>
             <span>{email}</span>
-            <Button variant='link' colorScheme='black'>Log out</Button>
+            <Button variant='link' colorScheme='black' onClick={() => dispatch(userLogout())}>Log out</Button>
           </Flex>
         </Flex >
 

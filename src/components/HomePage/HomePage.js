@@ -12,8 +12,6 @@ import { Box, Button, Flex } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 
 import { useProSidebar } from 'react-pro-sidebar';
-
-import { useNavigate } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 
 import './HomePage.css';
@@ -23,7 +21,6 @@ const HomePage = () => {
   const dispatch = useDispatch();
   const { loadingStatus, errorStatus } = useSelector(state => state.todoReducer);
 
-  const navigate = useNavigate();
   const email = useSelector(state => state.user.userEmail);
 
   return (

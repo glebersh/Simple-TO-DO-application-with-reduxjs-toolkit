@@ -1,12 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Input, InputGroup, InputRightAddon } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 
+import { changeSearchFilter } from '../store/slices/searchSlice';
+
 import './Searchbar.css';
+import { useDispatch } from 'react-redux';
 
 const Searchbar = () => {
+  const dispatch = useDispatch();
   const [searchtext, setSearchText] = useState('');
+
+  useEffect(() => {
+    dispatch(changeSearchFilter(searchtext));
+  }, [searchtext])
+
 
   return (
     <InputGroup mt='3em'>

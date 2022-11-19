@@ -20,7 +20,7 @@ const TodoItem = (props) => {
     <li className='todo-item'>
       <Flex justify='flex-start' fontSize='1.2em' align='center'
         flexWrap='wrap'>
-        <Tooltip label={completed ? 'Mark as unfulfilled' : 'Mark as done'}>
+        <Tooltip label={completed ? 'Mark as uncomplete' : 'Mark as complete'}>
           <CheckIcon className="todo-item__icon"
             onClick={() => dispatch(toggleCompleteState(id))}
             color={completed ? 'chartreuse' : 'darkgray'}></CheckIcon>

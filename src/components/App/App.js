@@ -6,13 +6,11 @@ import HomePage from '../HomePage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { ProSidebarProvider } from 'react-pro-sidebar';
 
-import { selectUser } from '../store/slices/userSlice';
 
 import './App.css';
-import { useSelector } from 'react-redux';
 
 const App = () => {
 
