@@ -3,14 +3,14 @@
     {
       "id": 1,
       "title": "Eat",
-      "completed": false,
+      "completed": true,
       "priority": "Low",
       "date": null
     },
     {
       "id": 2,
       "title": "Sleep",
-      "completed": false,
+      "completed": true,
       "priority": "Low",
       "date": null
     },
@@ -27,13 +27,6 @@
       "completed": false,
       "priority": "Low",
       "date": null
-    }
-  ],
-  "users": [
-    {
-      "login": "login",
-      "password": "password",
-      "id": 1
     }
   ]
 }
