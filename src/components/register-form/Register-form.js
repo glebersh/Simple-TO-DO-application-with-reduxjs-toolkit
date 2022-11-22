@@ -1,5 +1,5 @@
 import { auth, createUserWithEmailAndPassword } from '../../firebase';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useDispatch } from 'react-redux';
 import { userLogin } from '../store/slices/userSlice';
@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 const RegisterForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [requestState, setRequestState] = useState('');
 
   const registerToApp = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password)
@@ -23,14 +24,14 @@ const RegisterForm = () => {
         );
       })
       .then(() => navigate('/'))
-      .catch((err) => {
-        console.log(err);
-      });
+      .then(() => setRequestState('success'))
+      .catch(() => setRequestState('error'));
   };
 
   return (
     <>
-      <Form title='Sign up' loginHandler={registerToApp} />
+      <Form title='Sign up' loginHandler={registerToApp}
+        requestState={requestState} />
     </>
   )
 };

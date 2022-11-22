@@ -8,11 +8,19 @@ import Searchbar from '../Searchbar';
 import TodoForm from '../Todo-form';
 import TodoList from '../Todo-list';
 import SidebarMenu from '../Sidebar/Sidebar';
-import { Box, Button, Flex } from '@chakra-ui/react';
+import {
+  Box, Button, Flex,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+  Spinner
+} from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 
 import { useProSidebar } from 'react-pro-sidebar';
 import { Navigate } from 'react-router-dom';
+
 
 import './HomePage.css';
 
@@ -47,13 +55,28 @@ const HomePage = () => {
         <Box className='content-wrapper'>
           <Button onClick={() => dispatch(fetchTodos())}
             variant='outline' mt={{ lg: '3em', xs: '1.5em' }}>Get random tasks</Button>
+
+          {errorStatus &&
+            <Alert status='error'>
+              <AlertIcon />
+              <AlertTitle>Error: Connection failed.</AlertTitle>
+              <AlertDescription>Maybe your forgot to run the server. Use 'npm run server' - default port is 3001.</AlertDescription>
+            </Alert>
+          }
+
           <FilterBlock />
-
-          {loadingStatus === 'loading' && <h2>Loading...</h2>}
-          {errorStatus && <h2>Error...</h2>}
-
           <Searchbar />
-          <TodoList />
+
+          {loadingStatus === 'loading' ?
+            <Box textAlign='center' mt='10em'>
+              <Spinner
+                thickness='4px'
+                speed='0.65s'
+                w='10em' h='10em'
+                size='xl'
+              />
+            </Box> : <TodoList />}
+
           <TodoForm />
         </Box>
       </Flex> : <Navigate to='/login' />

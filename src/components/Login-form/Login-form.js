@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useDispatch } from 'react-redux';
 
@@ -12,6 +12,8 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [requestState, setRequestState] = useState('');
+
   const loginToApp = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userAuth) => {
@@ -24,14 +26,15 @@ const LoginForm = () => {
         );
       })
       .then(() => navigate('/'))
-      .catch((err) => {
-        console.log(err);
-      });
+      .then(() => setRequestState('success'))
+      .catch(() => setRequestState('error'));
   };
 
   return (
     <>
-      <Form title='Sign in' loginHandler={loginToApp} />
+      <Form title='Sign in'
+        loginHandler={loginToApp}
+        requestState={requestState} />
     </>
   )
 };
