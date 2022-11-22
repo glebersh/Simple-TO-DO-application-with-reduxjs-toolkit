@@ -19,10 +19,10 @@ const App = () => {
       <ProSidebarProvider>
         <Box className='app'>
           <Routes>
-            <Route path='/' element={
+            <Route path='TO-DO-application/' element={
               <HomePage />} />
-            <Route path='/registration' element={<RegisterPage />} />
-            <Route path='/login' element={<LoginPage />} />
+            <Route path='TO-DO-application/registration' element={<RegisterPage />} />
+            <Route path='TO-DO-application/login' element={<LoginPage />} />
           </Routes>
         </Box>
       </ProSidebarProvider>

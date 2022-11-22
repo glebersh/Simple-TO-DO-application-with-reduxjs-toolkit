@@ -79,7 +79,7 @@ const HomePage = () => {
 
           <TodoForm />
         </Box>
-      </Flex> : <Navigate to='/login' />
+      </Flex> : <Navigate to='login' />
   )
 }
 export default HomePage;

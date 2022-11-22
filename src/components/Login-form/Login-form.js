@@ -25,7 +25,7 @@ const LoginForm = () => {
           })
         );
       })
-      .then(() => navigate('/'))
+      .then(() => navigate('/TO-DO-application/'))
       .then(() => setRequestState('success'))
       .catch(() => setRequestState('error'));
   };

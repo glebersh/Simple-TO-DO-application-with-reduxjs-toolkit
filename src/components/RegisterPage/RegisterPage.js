@@ -17,7 +17,7 @@ const RegisterPage = () => {
       <h1 className='auth-title'>Sign up</h1>
       <RegisterForm />
       <Box mt='1.5em' fontSize='20px'
-      >Already have an account? <Link to='/login' className='auth-link'>Login</Link></Box>
+      >Already have an account? <Link to='/TO-DO-application/login/' className='auth-link'>Login</Link></Box>
     </Flex>
   )
 };

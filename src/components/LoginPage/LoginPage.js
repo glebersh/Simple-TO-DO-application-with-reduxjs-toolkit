@@ -17,7 +17,7 @@ const LoginPage = () => {
       <LoginForm />
 
       <Box mt='1.5em' fontSize='20px'
-      >Still have no account? <Link to='/registration' className='auth-link'>
+      >Still have no account? <Link to='/TO-DO-application/registration/' className='auth-link'>
           Sign up</Link></Box>
     </Flex>
   )
