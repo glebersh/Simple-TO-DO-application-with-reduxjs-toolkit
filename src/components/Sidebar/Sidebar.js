@@ -7,16 +7,19 @@ import { Flex, Box, useColorMode, Button, Avatar } from '@chakra-ui/react';
 import { CalendarIcon, BellIcon, TimeIcon, SunIcon, MoonIcon } from '@chakra-ui/icons';
 import { Sidebar } from 'react-pro-sidebar';
 
-import { today, tomorrow } from '../../consts';
 import { userLogout } from '../store/slices/userSlice';
 
 import './Sidebar.css';
+import dayjs from 'dayjs';
 
 const SidebarMenu = () => {
 
   const email = useSelector(state => state.user.userEmail);
   const { colorMode, toggleColorMode } = useColorMode();
   const dispatch = useDispatch();
+
+  const today = dayjs().format("YYYY-MM-DD");
+  const tomorrow = dayjs().add(1, 'day').format("YYYY-MM-DD");
 
 
   return (
