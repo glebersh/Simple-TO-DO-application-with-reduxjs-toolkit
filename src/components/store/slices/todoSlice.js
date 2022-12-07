@@ -32,7 +32,7 @@ export const deleteTodo = createAsyncThunk(
         }
       );
       if (!response.ok) {
-        throw new Error('Item was not deleted due to an occurred error');
+        throw new Error('Item wasn\'t  deleted due to an occurred error');
       }
       dispatch(deleteItem({ id }));
     } catch (error) {
@@ -58,7 +58,7 @@ export const toggleCompleteState = createAsyncThunk(
         }
       );
       if (!response.ok) {
-        throw new Error('Item was not deleted due to an occurred error');
+        throw new Error('Item complete status wasn\'t toggled due to an occurred error');
       }
       dispatch(toggleDone({ id }));
     } catch (error) {
@@ -69,7 +69,7 @@ export const toggleCompleteState = createAsyncThunk(
 
 export const addItemAsync = createAsyncThunk(
   'todo/addItemAsync',
-  async function ({ text, reminderDate }, { rejectWithValue, dispatch }) {
+  async function ({ text, reminderDate }, { rejectWithValue }) {
     try {
       const newTask = {
         title: text,
@@ -88,10 +88,10 @@ export const addItemAsync = createAsyncThunk(
         }
       );
       if (!response.ok) {
-        throw new Error('Item was not deleted due to an occurred error');
+        throw new Error('Item wasn\'t added due to an occurred error');
       }
       const data = await response.json();
-      dispatch(addItem(data));
+      return data;
     }
     catch (error) {
       return rejectWithValue(error.message);
@@ -115,7 +115,7 @@ export const editTextAsync = createAsyncThunk(
         }
       );
       if (!response.ok) {
-        throw new Error('Item was not deleted due to an occurred error');
+        throw new Error('Item wasn\'t edited due to an occurred error');
       }
       dispatch(editText({ id, editedText }));
     } catch (error) {
@@ -156,31 +156,25 @@ const todoSlice = createSlice({
       neededItem.priority = action.payload.priority;
     },
   },
-  extraReducers: {
-    [fetchTodos.pending]: (state) => {
-      state.loadingStatus = 'loading'
-    },
-    [fetchTodos.fulfilled]: (state, action) => {
-      state.loadingStatus = 'resolved'
-      state.todo = action.payload
-    },
-    [fetchTodos.rejected]: (state, action) => {
-      state.loadingStatus = 'rejected'
-      state.errorStatus = action.payload;
-    },
-    [deleteTodo.rejected]: (state, action) => {
-      state.loadingStatus = 'rejected'
-      state.errorStatus = action.payload;
-    },
-    [toggleCompleteState.rejected]: (state, action) => {
-      state.loadingStatus = 'rejected'
-      state.errorStatus = action.payload;
-    },
-    [addItemAsync.rejected]: (state, action) => {
-      state.loadingStatus = 'rejected'
-      state.errorStatus = action.payload;
-    },
-  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchTodos.fulfilled, (state, action) => {
+        state.todo = action.payload;
+      })
+      .addCase(addItemAsync.fulfilled, (state, action) => {
+        state.todo.push(action.payload);
+      })
+      .addMatcher((action) => action.type.endsWith('fetchTodos/rejected'), (state, action) => {
+        state.loadingStatus = 'rejected';
+        state.errorStatus = action.payload || action.error.message;
+      })
+      .addMatcher((action) => action.type.endsWith('fetchTodos/pending'), (state) => {
+        state.loadingStatus = 'loading';
+      })
+      .addMatcher((action) => action.type.endsWith('/fulfilled'), (state) => {
+        state.loadingStatus = 'resolved';
+      })
+  }
 });
 
 

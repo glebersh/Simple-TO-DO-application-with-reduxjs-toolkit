@@ -7,23 +7,12 @@ export const selectPriority = state => state.priority;
 export const selectSearchText = state => state.search;
 export const selectReminderDate = state => state.date;
 
-
-// function createSelector(actitiveFilter, priorityFilter = 'Low') {
-//   if (actitiveFilter === 'complete')
-//     return allTodos.filter((item) => item.priority === priorityFilter && item.completed && item.title.includes(searchFilter) && item.date === dateFilter);
-//   else if (actitiveFilter === 'active') {
-//     return allTodos.filter((item) => item.priority === priorityFilter && !item.completed && item.title.includes(searchFilter) && item.date === dateFilter);
-//   }
-//   else if (actitiveFilter === 'all') {
-//     return allTodos.filter((item) => item.priority === priorityFilter && item.title.includes(searchFilter) && item.date === dateFilter);
-//   }
-// };
-
 // Checking for three filters:
 // --First filter is for reminder date,
 //   --Filtering by 'complete' property on task,
 //     --Filtering by 'priority' property,
 //       --and filtering by current searchbar text.
+
 
 export const selectByFilters = createSelector(
   [selectAll, selectActive, selectPriority, selectSearchText, selectReminderDate],
