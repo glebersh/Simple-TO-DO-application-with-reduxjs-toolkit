@@ -15,13 +15,6 @@
       "date": null
     },
     {
-      "id": 3,
-      "title": "Drink",
-      "completed": false,
-      "priority": "Low",
-      "date": null
-    },
-    {
       "id": 5,
       "title": "Learn Redux Toolkit",
       "completed": true,

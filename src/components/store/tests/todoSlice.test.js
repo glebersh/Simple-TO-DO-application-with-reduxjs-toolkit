@@ -13,7 +13,7 @@ const initialState = {
   errorStatus: null,
 }
 
-const notEmptyState = {
+const mockedTodos = {
   todo: [{
     title: 'Learn something',
     completed: false,
@@ -34,7 +34,7 @@ describe('Todo Slice tests', () => {
   it('Should add item on \'addItem\' action', () => {
     const action = {
       type: addItem.type,
-      payload: notEmptyState.todo[0]
+      payload: mockedTodos.todo[0]
     };
 
     const result = todoReducer(initialState, action);
@@ -50,7 +50,7 @@ describe('Todo Slice tests', () => {
       payload: { id: 100 }
     };
 
-    const result = todoReducer(notEmptyState, action);
+    const result = todoReducer(mockedTodos, action);
     expect(result.todo).toEqual([]);
   });
 
@@ -60,7 +60,7 @@ describe('Todo Slice tests', () => {
       payload: { id: 100, editedText: 'New text' }
     };
 
-    const result = todoReducer(notEmptyState, action);
+    const result = todoReducer(mockedTodos, action);
     expect(result.todo[0]).toEqual({
       title: 'New text',
       completed: false,
@@ -76,7 +76,7 @@ describe('Todo Slice tests', () => {
       payload: { id: 100 }
     };
 
-    const result = todoReducer(notEmptyState, action);
+    const result = todoReducer(mockedTodos, action);
     expect(result.todo[0]).toEqual({
       title: 'Learn something',
       completed: true,
@@ -92,7 +92,7 @@ describe('Todo Slice tests', () => {
       payload: { id: 100, priority: 'High' }
     };
 
-    const result = todoReducer(notEmptyState, action);
+    const result = todoReducer(mockedTodos, action);
     expect(result.todo[0]).toEqual({
       title: 'Learn something',
       completed: false,
