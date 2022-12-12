@@ -8,8 +8,8 @@ import { DeleteIcon, CheckIcon, EditIcon } from '@chakra-ui/icons';
 const TodoItem = (props) => {
   const { id, title, completed } = props;
   const dispatch = useDispatch();
-  const [isEditing, setEditingStatus] = useState(false);
-  const [editedText, setEditedText] = useState(props.title);
+  const [isEditing, setEditingStatus] = React.useState(false);
+  const [editedText, setEditedText] = React.useState(props.title);
 
   useEffect(() => {
     setEditingStatus(false);
@@ -21,13 +21,13 @@ const TodoItem = (props) => {
       <Flex justify='flex-start' fontSize='1.2em' align='center'
         flexWrap='wrap'>
         <Tooltip label={completed ? 'Mark as uncomplete' : 'Mark as complete'}>
-          <CheckIcon className="todo-item__icon"
+          <CheckIcon className="todo-item__icon" role='check'
             onClick={() => dispatch(toggleCompleteState(id))}
             color={completed ? 'chartreuse' : 'darkgray'}></CheckIcon>
         </Tooltip>
         {isEditing ?
           <>
-            <Input type='text' value={editedText}
+            <Input type='text' value={editedText} role='editing-text-input'
               w={{
                 xs: '80%', s: '70%',
                 md: '60%', lg: '60%',
@@ -44,7 +44,7 @@ const TodoItem = (props) => {
                 xs: '1em auto 0', s: '0 auto',
                 md: '0 0 0 1em', lg: '0 0 1em 1em',
                 xl: '0 1em 1em 1em', xll: '0 1em 0 1em'
-              }}>Confirm</Button>
+              }} role='edit-button'>Confirm</Button>
           </> :
           <span style={completed ? { 'textDecoration': 'line-through' } :
             { 'textDecoration': 'none' }} className="todo-list__text">{title}</span>}
@@ -60,12 +60,12 @@ const TodoItem = (props) => {
             xl: '0', xll: '0'
           }}>
           <Tooltip label='Edit'>
-            <EditIcon className="todo-item__icon"
+            <EditIcon className="todo-item__icon" role='edit-icon'
               onClick={() => setEditingStatus(!isEditing)}
               mr='1em'></EditIcon>
           </Tooltip>
           <Tooltip label='Delete task'>
-            <DeleteIcon className="todo-item__icon"
+            <DeleteIcon className="todo-item__icon" role='delete-icon'
               onClick={() => dispatch(deleteTodo(id))} color='red'></DeleteIcon>
           </Tooltip>
 
@@ -73,9 +73,10 @@ const TodoItem = (props) => {
             <Select onChange={(e) =>
               dispatch(togglePriority({ id, priority: e.target.value }))}
               ml='1em'
-              size='sm' variant='outline'>
+              size='sm' variant='outline'
+              role='select'>
               <option value='Low'>Low</option>
-              <option value='Medium'>Medium</option>
+              <option value='Medium' role='select-option'>Medium</option>
               <option value='High'>High</option>
             </Select>
           </Tooltip>

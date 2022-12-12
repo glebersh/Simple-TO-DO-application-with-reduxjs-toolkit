@@ -1,10 +1,10 @@
-import todoReducer,
-{
+import todoReducer, {
   deleteItem,
   addItem,
   toggleDone,
   editText,
-  togglePriority
+  togglePriority,
+  fetchTodos
 } from '../slices/todoSlice';
 
 const initialState = {
@@ -101,4 +101,31 @@ describe('Todo Slice tests', () => {
       priority: 'High'
     });
   });
+
+  it('Should fetch data on \'fetchTodos.fulfilled\'', () => {
+    const state = todoReducer(initialState, fetchTodos.fulfilled(mockedTodos.todo));
+    expect(state).toEqual({
+      todo: mockedTodos.todo,
+      loadingStatus: 'resolved',
+      errorStatus: null
+    })
+  })
+
+  it('loadingStatus should be \'loading\' on \'fetchTodos.pending\'', () => {
+    const state = todoReducer(initialState, fetchTodos.pending());
+    expect(state).toEqual({
+      todo: [],
+      loadingStatus: 'loading',
+      errorStatus: null
+    })
+  });
+
+  it('errorStatus should be true on \'fetchTodos.rejected\'', () => {
+    const state = todoReducer(initialState, fetchTodos.rejected());
+    expect(state).toEqual({
+      todo: [],
+      loadingStatus: 'rejected',
+      errorStatus: "Error",
+    })
+  })
 });

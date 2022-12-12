@@ -11,10 +11,10 @@ import dayjs from 'dayjs';
 import './Todo-form.css';
 
 const TodoForm = () => {
-  const [text, setText] = useState('');
-  const [reminderDate, setReminderDate] = useState(null);
-  const [reminderInput, showReminderInput] = useState(false);
-  const [showForm, changeFormView] = useState(false);
+  const [text, setText] = React.useState('');
+  const [reminderDate, setReminderDate] = React.useState('');
+  const [reminderInput, showReminderInput] = React.useState(false);
+  const [showForm, changeFormView] = React.useState(false);
 
   const dispatch = useDispatch();
 
@@ -34,7 +34,7 @@ const TodoForm = () => {
           'cursor': 'pointer',
           'transform': 'rotate3d(0,0,1, 90deg)',
           'transition': '0.55s'
-        }}
+        }} role='form-icon'
           onClick={() => changeFormView(!showForm)} />
       </Tooltip>
 

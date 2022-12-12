@@ -1,21 +1,27 @@
 import {
   fetchTodos, deleteTodo,
-  toggleCompleteState,
   addItemAsync,
   editTextAsync
 } from '../slices/todoSlice';
 
+
+jest.mock('../index');
+
+const mockedTodos = {
+  todoReducer: {
+    todo: [{
+      title: 'Learn something',
+      completed: false,
+      id: 100,
+      date: null,
+      priority: 'Low'
+    }],
+    loadingStatus: null,
+    errorStatus: null,
+  },
+};
+
 global.fetch = jest.fn();
-
-const mockedTodos = [{
-  title: 'Learn something',
-  completed: false,
-  id: 100,
-  date: null,
-  priority: 'Low'
-}]
-
-
 
 describe('todoReducer Async Thunk', () => {
   it('fetchTodos with \'resolved\' response', async () => {

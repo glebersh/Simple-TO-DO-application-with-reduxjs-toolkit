@@ -23,7 +23,7 @@
     },
     {
       "title": "Learn JEST and React Test Library",
-      "completed": true,
+      "completed": false,
       "userId": 1,
       "date": "2022-12-07",
       "priority": "Low",

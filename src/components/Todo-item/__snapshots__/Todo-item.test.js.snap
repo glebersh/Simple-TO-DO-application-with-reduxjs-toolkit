@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToDo Item tests Should render with data and match snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <li
+        class="todo-item"
+      >
+        <div
+          class="css-lw0gve"
+        >
+          <svg
+            class="chakra-icon todo-item__icon css-13s16wv"
+            focusable="false"
+            role="check"
+            viewBox="0 0 14 14"
+          >
+            <g
+              fill="currentColor"
+            >
+              <polygon
+                points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+              />
+            </g>
+          </svg>
+          <span
+            class="todo-list__text"
+            style="text-decoration: none;"
+          >
+            Learn something
+          </span>
+          <div
+            class="css-d2ypz6"
+          >
+            <svg
+              class="chakra-icon todo-item__icon css-bgr7gm"
+              focusable="false"
+              role="edit-icon"
+              viewBox="0 0 24 24"
+            >
+              <g
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2"
+              >
+                <path
+                  d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                />
+                <path
+                  d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                />
+              </g>
+            </svg>
+            <svg
+              class="chakra-icon todo-item__icon css-16bi4zt"
+              focusable="false"
+              role="delete-icon"
+              viewBox="0 0 24 24"
+            >
+              <g
+                fill="currentColor"
+              >
+                <path
+                  d="M19.452 7.5H4.547a.5.5 0 00-.5.545l1.287 14.136A2 2 0 007.326 24h9.347a2 2 0 001.992-1.819L19.95 8.045a.5.5 0 00-.129-.382.5.5 0 00-.369-.163zm-9.2 13a.75.75 0 01-1.5 0v-9a.75.75 0 011.5 0zm5 0a.75.75 0 01-1.5 0v-9a.75.75 0 011.5 0zM22 4h-4.75a.25.25 0 01-.25-.25V2.5A2.5 2.5 0 0014.5 0h-5A2.5 2.5 0 007 2.5v1.25a.25.25 0 01-.25.25H2a1 1 0 000 2h20a1 1 0 000-2zM9 3.75V2.5a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v1.25a.25.25 0 01-.25.25h-5.5A.25.25 0 019 3.75z"
+                />
+              </g>
+            </svg>
+            <div
+              class="chakra-select__wrapper css-wb98cn"
+            >
+              <select
+                class="chakra-select css-1ik61og"
+                role="select"
+              >
+                <option
+                  value="Low"
+                >
+                  Low
+                </option>
+                <option
+                  role="select-option"
+                  value="Medium"
+                >
+                  Medium
+                </option>
+                <option
+                  value="High"
+                >
+                  High
+                </option>
+              </select>
+              <div
+                class="chakra-select__icon-wrapper css-162mkon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="chakra-select__icon"
+                  focusable="false"
+                  role="presentation"
+                  style="width: 1em; height: 1em; color: currentColor;"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </div>
+  </body>,
+  "container": <div>
+    <li
+      class="todo-item"
+    >
+      <div
+        class="css-lw0gve"
+      >
+        <svg
+          class="chakra-icon todo-item__icon css-13s16wv"
+          focusable="false"
+          role="check"
+          viewBox="0 0 14 14"
+        >
+          <g
+            fill="currentColor"
+          >
+            <polygon
+              points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+            />
+          </g>
+        </svg>
+        <span
+          class="todo-list__text"
+          style="text-decoration: none;"
+        >
+          Learn something
+        </span>
+        <div
+          class="css-d2ypz6"
+        >
+          <svg
+            class="chakra-icon todo-item__icon css-bgr7gm"
+            focusable="false"
+            role="edit-icon"
+            viewBox="0 0 24 24"
+          >
+            <g
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+            >
+              <path
+                d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+              />
+              <path
+                d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+              />
+            </g>
+          </svg>
+          <svg
+            class="chakra-icon todo-item__icon css-16bi4zt"
+            focusable="false"
+            role="delete-icon"
+            viewBox="0 0 24 24"
+          >
+            <g
+              fill="currentColor"
+            >
+              <path
+                d="M19.452 7.5H4.547a.5.5 0 00-.5.545l1.287 14.136A2 2 0 007.326 24h9.347a2 2 0 001.992-1.819L19.95 8.045a.5.5 0 00-.129-.382.5.5 0 00-.369-.163zm-9.2 13a.75.75 0 01-1.5 0v-9a.75.75 0 011.5 0zm5 0a.75.75 0 01-1.5 0v-9a.75.75 0 011.5 0zM22 4h-4.75a.25.25 0 01-.25-.25V2.5A2.5 2.5 0 0014.5 0h-5A2.5 2.5 0 007 2.5v1.25a.25.25 0 01-.25.25H2a1 1 0 000 2h20a1 1 0 000-2zM9 3.75V2.5a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v1.25a.25.25 0 01-.25.25h-5.5A.25.25 0 019 3.75z"
+              />
+            </g>
+          </svg>
+          <div
+            class="chakra-select__wrapper css-wb98cn"
+          >
+            <select
+              class="chakra-select css-1ik61og"
+              role="select"
+            >
+              <option
+                value="Low"
+              >
+                Low
+              </option>
+              <option
+                role="select-option"
+                value="Medium"
+              >
+                Medium
+              </option>
+              <option
+                value="High"
+              >
+                High
+              </option>
+            </select>
+            <div
+              class="chakra-select__icon-wrapper css-162mkon"
+            >
+              <svg
+                aria-hidden="true"
+                class="chakra-select__icon"
+                focusable="false"
+                role="presentation"
+                style="width: 1em; height: 1em; color: currentColor;"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

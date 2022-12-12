@@ -14,7 +14,8 @@ const TodoList = () => {
   return (
     <ul className='todo-items-list'>
       <label style={{ 'fontSize': '1.25em' }}>Filter by priority:</label>
-      <Select onChange={(e) => dispatch(changePriorityFilter(e.target.value))} w='20%' minW='200px'>
+      <Select onChange={(e) => dispatch(changePriorityFilter(e.target.value))}
+        w='20%' minW='200px' role='priority-select'>
         <option value='All'>All</option>
         <option value='Low'>Low</option>
         <option value='Medium'>Medium</option>

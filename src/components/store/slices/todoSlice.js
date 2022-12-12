@@ -166,7 +166,7 @@ const todoSlice = createSlice({
       })
       .addMatcher((action) => action.type.endsWith('fetchTodos/rejected'), (state, action) => {
         state.loadingStatus = 'rejected';
-        state.errorStatus = action.payload || action.error.message;
+        state.errorStatus = action.payload || "Error";
       })
       .addMatcher((action) => action.type.endsWith('fetchTodos/pending'), (state) => {
         state.loadingStatus = 'loading';
