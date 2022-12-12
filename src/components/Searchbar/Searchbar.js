@@ -19,7 +19,7 @@ const Searchbar = () => {
 
   return (
     <InputGroup mt='3em'>
-      <Input id='search' icon={<SearchIcon />}
+      <Input id='search' icon={<SearchIcon />} role='searchbar'
         placeholder="Search by task..."
         value={searchtext} onChange={(e) => setSearchText(e.target.value)}
         borderColor='rgb(122,122,122)'

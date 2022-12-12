@@ -27,8 +27,8 @@ import './HomePage.css';
 const HomePage = () => {
   const { toggleSidebar } = useProSidebar();
   const dispatch = useDispatch();
-  const { loadingStatus, errorStatus } = useSelector(state => state.todoReducer);
-
+  const loadingStatus = useSelector(state => state.todoReducer.loadingStatus);
+  const errorStatus = useSelector(state => state.todoReducer.errorStatus);
   const email = useSelector(state => state.user.userEmail);
 
   return (
@@ -37,7 +37,7 @@ const HomePage = () => {
         xll: 'row', xl: 'row',
         lg: 'row', md: 'column',
         s: 'column', xs: 'column'
-      }} justify='flex-start'>
+      }} justify='flex-start' data-testid='home-page-container'>
         <Box>
           <HamburgerIcon onClick={() => toggleSidebar()} fontSize='40px'
             display={{

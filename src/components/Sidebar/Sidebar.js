@@ -3,7 +3,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeDateFilter } from '../store/slices/dateSlice';
 
-import { Flex, Box, useColorMode, Button, Avatar } from '@chakra-ui/react';
+import { useColorMode, Flex, Box, Button, Avatar } from '@chakra-ui/react';
 import { CalendarIcon, BellIcon, TimeIcon, SunIcon, MoonIcon } from '@chakra-ui/icons';
 import { Sidebar } from 'react-pro-sidebar';
 
@@ -35,13 +35,14 @@ const SidebarMenu = () => {
           <Avatar size='md' mr='1em' />
           <Flex direction='column'>
             <span>{email}</span>
-            <Button variant='link' colorScheme='black' onClick={() => dispatch(userLogout())}>Log out</Button>
+            <Button variant='link' colorScheme='black' role='logout-button'
+              onClick={() => dispatch(userLogout())}>Log out</Button>
           </Flex>
         </Flex >
 
         <Flex direction='column' align='center'>
           <Button onClick={toggleColorMode} w='75px' m='3em auto 0'
-            display='block'
+            display='block' role='color-theme-button'
             variant='outline'>
             {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
           </Button>
@@ -53,7 +54,7 @@ const SidebarMenu = () => {
               }} mr='.75em' />
 
             <Button onClick={() => dispatch(changeDateFilter(today))}
-              variant='outline'
+              variant='outline' role='date-filter-button'
               minW='100px'>Today</Button>
           </Box>
 
@@ -64,7 +65,7 @@ const SidebarMenu = () => {
               }} mr='.75em' />
 
             <Button onClick={() => dispatch(changeDateFilter(tomorrow))}
-              variant='outline'
+              variant='outline' role='date-filter-button'
               minW='100px'>Tomorrow</Button>
           </Box>
 
@@ -75,7 +76,7 @@ const SidebarMenu = () => {
               }} mr='.75em' />
 
             <Button onClick={() => dispatch(changeDateFilter(''))}
-              variant='outline'
+              variant='outline' role='date-filter-button'
               minW='100px'>All dates
             </Button>
           </Box>

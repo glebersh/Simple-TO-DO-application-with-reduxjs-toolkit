@@ -33,7 +33,7 @@ const Form = ({ title, loginHandler, requestState }) => {
 
         <Input type='email' w='300px' id='email-input'
           onChange={(e) => setEmail(e.target.value)}
-          required />
+          required role='email-input' />
       </Flex>
       <Flex align='flex-start' direction='column'>
         <FormLabel htmlFor='email-input' fontSize='20px' m='2em auto 0 0'
@@ -41,7 +41,7 @@ const Form = ({ title, loginHandler, requestState }) => {
 
         <Input type='password' w='300px' id='password-input'
           onChange={(e) => setPassword(e.target.value)}
-          required />
+          required role='password-input' />
       </Flex>
 
       <Button variant='outline' w='100px' mt='3em'
