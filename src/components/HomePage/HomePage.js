@@ -32,7 +32,7 @@ const HomePage = () => {
   const email = useSelector(state => state.user.userEmail);
 
   return (
-    email ?
+    email !== '' ?
       <Flex direction={{
         xll: 'row', xl: 'row',
         lg: 'row', md: 'column',
@@ -53,14 +53,15 @@ const HomePage = () => {
           <SidebarMenu />
         </Box>
         <Box className='content-wrapper'>
-          <Button onClick={() => dispatch(fetchTodos())}
+          <Button onClick={() => dispatch(fetchTodos())} role='fetch-data-button'
             variant='outline' mt={{ lg: '3em', xs: '1.5em' }}>Get random tasks</Button>
 
           {errorStatus &&
-            <Alert status='error'>
+            <Alert status='error' role='alert-message'>
               <AlertIcon />
               <AlertTitle>Error: Connection failed.</AlertTitle>
-              <AlertDescription>Maybe your forgot to run the server. Use 'npm run server' - default port is 3001.</AlertDescription>
+              <AlertDescription>Maybe your forgot to run the server. Use 'npm run server'
+                - default port is 3001.</AlertDescription>
             </Alert>
           }
 
@@ -68,7 +69,7 @@ const HomePage = () => {
           <Searchbar />
 
           {loadingStatus === 'loading' ?
-            <Box textAlign='center' mt='10em'>
+            <Box textAlign='center' mt='10em' data-testid='spinner'>
               <Spinner
                 thickness='4px'
                 speed='0.65s'

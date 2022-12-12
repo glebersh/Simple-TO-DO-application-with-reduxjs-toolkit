@@ -1,0 +1,656 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page Home page snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="css-fxrqcp"
+        data-testid="home-page-container"
+      >
+        <div
+          class="css-0"
+        >
+          <svg
+            class="chakra-icon css-6rftw9"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"
+              fill="currentColor"
+            />
+          </svg>
+          <aside
+            class="sc-gswNZR bOQEtf sidebar sidebar"
+            data-testid="sidebar-test-id"
+            style="border-color: rgba(180,180,180,0.5);"
+            width="250px"
+          >
+            <div
+              class="sc-dkrFOg ftUgNz sidebar-inner"
+              data-testid="inner-sidebar-test-id"
+            >
+              <div
+                class="sidebar css-j7qwjs"
+              >
+                <div
+                  class="css-1crz74x"
+                >
+                  <span
+                    class="chakra-avatar css-1lmrwtw"
+                  >
+                    <svg
+                      aria-label=" avatar"
+                      class="chakra-avatar__svg css-16ite8i"
+                      role="img"
+                      viewBox="0 0 128 128"
+                    >
+                      <path
+                        d="M103,102.1388 C93.094,111.92 79.3504,118 64.1638,118 C48.8056,118 34.9294,111.768 25,101.7892 L25,95.2 C25,86.8096 31.981,80 40.6,80 L87.4,80 C96.019,80 103,86.8096 103,95.2 L103,102.1388 Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        d="M63.9961647,24 C51.2938136,24 41,34.2938136 41,46.9961647 C41,59.7061864 51.2938136,70 63.9961647,70 C76.6985159,70 87,59.7061864 87,46.9961647 C87,34.2938136 76.6985159,24 63.9961647,24"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                  <div
+                    class="css-j7qwjs"
+                  >
+                    <span />
+                    <button
+                      class="chakra-button css-4xx2wk"
+                      role="logout-button"
+                      type="button"
+                    >
+                      Log out
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="css-dvxtzn"
+                >
+                  <button
+                    class="chakra-button css-14dbpui"
+                    role="color-theme-button"
+                    type="button"
+                  >
+                    <svg
+                      class="chakra-icon css-onkibi"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          r="5"
+                        />
+                        <path
+                          d="M12 1v2"
+                        />
+                        <path
+                          d="M12 21v2"
+                        />
+                        <path
+                          d="M4.22 4.22l1.42 1.42"
+                        />
+                        <path
+                          d="M18.36 18.36l1.42 1.42"
+                        />
+                        <path
+                          d="M1 12h2"
+                        />
+                        <path
+                          d="M21 12h2"
+                        />
+                        <path
+                          d="M4.22 19.78l1.42-1.42"
+                        />
+                        <path
+                          d="M18.36 5.64l1.42-1.42"
+                        />
+                      </g>
+                    </svg>
+                  </button>
+                  <div
+                    class="css-ub4vqw"
+                  >
+                    <svg
+                      class="chakra-icon css-hhlek1"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <g
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M12,0A12,12,0,1,0,24,12,12.014,12.014,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"
+                        />
+                        <path
+                          d="M17.134,15.81,12.5,11.561V6.5a1,1,0,0,0-2,0V12a1,1,0,0,0,.324.738l4.959,4.545a1.01,1.01,0,0,0,1.413-.061A1,1,0,0,0,17.134,15.81Z"
+                        />
+                      </g>
+                    </svg>
+                    <button
+                      class="chakra-button css-c24asi"
+                      role="date-filter-button"
+                      type="button"
+                    >
+                      Today
+                    </button>
+                  </div>
+                  <div
+                    class="css-ub4vqw"
+                  >
+                    <svg
+                      class="chakra-icon css-1d1e0il"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <button
+                      class="chakra-button css-c24asi"
+                      role="date-filter-button"
+                      type="button"
+                    >
+                      Tomorrow
+                    </button>
+                  </div>
+                  <div
+                    class="css-ub4vqw"
+                  >
+                    <svg
+                      class="chakra-icon css-hhlek1"
+                      focusable="false"
+                      viewBox="0 0 14 14"
+                    >
+                      <path
+                        d="M10.8889,5.5 L3.11111,5.5 L3.11111,7.05556 L10.8889,7.05556 L10.8889,5.5 Z M12.4444,1.05556 L11.6667,1.05556 L11.6667,0 L10.1111,0 L10.1111,1.05556 L3.88889,1.05556 L3.88889,0 L2.33333,0 L2.33333,1.05556 L1.55556,1.05556 C0.692222,1.05556 0.00777777,1.75556 0.00777777,2.61111 L0,12.5 C0,13.3556 0.692222,14 1.55556,14 L12.4444,14 C13.3,14 14,13.3556 14,12.5 L14,2.61111 C14,1.75556 13.3,1.05556 12.4444,1.05556 Z M12.4444,12.5 L1.55556,12.5 L1.55556,3.94444 L12.4444,3.94444 L12.4444,12.5 Z M8.55556,8.61111 L3.11111,8.61111 L3.11111,10.1667 L8.55556,10.1667 L8.55556,8.61111 Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <button
+                      class="chakra-button css-c24asi"
+                      role="date-filter-button"
+                      type="button"
+                    >
+                      All dates
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div
+          class="content-wrapper css-0"
+        >
+          <button
+            class="chakra-button css-1lddm08"
+            role="fetch-data-button"
+            type="button"
+          >
+            Get random tasks
+          </button>
+          <div
+            class="css-1v8nkjm"
+          >
+            <h2
+              style="font-size: 1.25em;"
+            >
+              Filter tasks: 
+            </h2>
+            <div
+              class="css-185f7xr"
+            >
+              <button
+                class="chakra-button css-fu5gd8"
+                id="btn-1"
+                type="button"
+              >
+                All
+              </button>
+              <button
+                class="chakra-button css-fu5gd8"
+                id="btn-2"
+                type="button"
+              >
+                Active
+              </button>
+              <button
+                class="chakra-button css-fu5gd8"
+                id="btn-3"
+                type="button"
+              >
+                Done
+              </button>
+            </div>
+          </div>
+          <div
+            class="chakra-input__group css-d4ficv"
+          >
+            <input
+              class="chakra-input css-117fu1l"
+              icon="[object Object]"
+              id="search"
+              placeholder="Search by task..."
+              role="searchbar"
+              value=""
+            />
+            <div
+              class="chakra-input__right-addon css-u3ali5"
+            >
+              <svg
+                class="chakra-icon css-onkibi"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23.384,21.619,16.855,15.09a9.284,9.284,0,1,0-1.768,1.768l6.529,6.529a1.266,1.266,0,0,0,1.768,0A1.251,1.251,0,0,0,23.384,21.619ZM2.75,9.5a6.75,6.75,0,1,1,6.75,6.75A6.758,6.758,0,0,1,2.75,9.5Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+          </div>
+          <div />
+          <div
+            class="css-d2pp4n"
+          >
+            <svg
+              class="chakra-icon css-6oco0p"
+              focusable="false"
+              role="form-icon"
+              viewBox="0 0 24 24"
+            >
+              <g
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2"
+              >
+                <rect
+                  height="18"
+                  rx="2"
+                  ry="2"
+                  width="18"
+                  x="3"
+                  y="3"
+                />
+                <path
+                  d="M12 8v8"
+                />
+                <path
+                  d="M8 12h8"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="css-fxrqcp"
+      data-testid="home-page-container"
+    >
+      <div
+        class="css-0"
+      >
+        <svg
+          class="chakra-icon css-6rftw9"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"
+            fill="currentColor"
+          />
+        </svg>
+        <aside
+          class="sc-gswNZR bOQEtf sidebar sidebar"
+          data-testid="sidebar-test-id"
+          style="border-color: rgba(180,180,180,0.5);"
+          width="250px"
+        >
+          <div
+            class="sc-dkrFOg ftUgNz sidebar-inner"
+            data-testid="inner-sidebar-test-id"
+          >
+            <div
+              class="sidebar css-j7qwjs"
+            >
+              <div
+                class="css-1crz74x"
+              >
+                <span
+                  class="chakra-avatar css-1lmrwtw"
+                >
+                  <svg
+                    aria-label=" avatar"
+                    class="chakra-avatar__svg css-16ite8i"
+                    role="img"
+                    viewBox="0 0 128 128"
+                  >
+                    <path
+                      d="M103,102.1388 C93.094,111.92 79.3504,118 64.1638,118 C48.8056,118 34.9294,111.768 25,101.7892 L25,95.2 C25,86.8096 31.981,80 40.6,80 L87.4,80 C96.019,80 103,86.8096 103,95.2 L103,102.1388 Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M63.9961647,24 C51.2938136,24 41,34.2938136 41,46.9961647 C41,59.7061864 51.2938136,70 63.9961647,70 C76.6985159,70 87,59.7061864 87,46.9961647 C87,34.2938136 76.6985159,24 63.9961647,24"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+                <div
+                  class="css-j7qwjs"
+                >
+                  <span />
+                  <button
+                    class="chakra-button css-4xx2wk"
+                    role="logout-button"
+                    type="button"
+                  >
+                    Log out
+                  </button>
+                </div>
+              </div>
+              <div
+                class="css-dvxtzn"
+              >
+                <button
+                  class="chakra-button css-14dbpui"
+                  role="color-theme-button"
+                  type="button"
+                >
+                  <svg
+                    class="chakra-icon css-onkibi"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <g
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="5"
+                      />
+                      <path
+                        d="M12 1v2"
+                      />
+                      <path
+                        d="M12 21v2"
+                      />
+                      <path
+                        d="M4.22 4.22l1.42 1.42"
+                      />
+                      <path
+                        d="M18.36 18.36l1.42 1.42"
+                      />
+                      <path
+                        d="M1 12h2"
+                      />
+                      <path
+                        d="M21 12h2"
+                      />
+                      <path
+                        d="M4.22 19.78l1.42-1.42"
+                      />
+                      <path
+                        d="M18.36 5.64l1.42-1.42"
+                      />
+                    </g>
+                  </svg>
+                </button>
+                <div
+                  class="css-ub4vqw"
+                >
+                  <svg
+                    class="chakra-icon css-hhlek1"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <g
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12,0A12,12,0,1,0,24,12,12.014,12.014,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"
+                      />
+                      <path
+                        d="M17.134,15.81,12.5,11.561V6.5a1,1,0,0,0-2,0V12a1,1,0,0,0,.324.738l4.959,4.545a1.01,1.01,0,0,0,1.413-.061A1,1,0,0,0,17.134,15.81Z"
+                      />
+                    </g>
+                  </svg>
+                  <button
+                    class="chakra-button css-c24asi"
+                    role="date-filter-button"
+                    type="button"
+                  >
+                    Today
+                  </button>
+                </div>
+                <div
+                  class="css-ub4vqw"
+                >
+                  <svg
+                    class="chakra-icon css-1d1e0il"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <button
+                    class="chakra-button css-c24asi"
+                    role="date-filter-button"
+                    type="button"
+                  >
+                    Tomorrow
+                  </button>
+                </div>
+                <div
+                  class="css-ub4vqw"
+                >
+                  <svg
+                    class="chakra-icon css-hhlek1"
+                    focusable="false"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      d="M10.8889,5.5 L3.11111,5.5 L3.11111,7.05556 L10.8889,7.05556 L10.8889,5.5 Z M12.4444,1.05556 L11.6667,1.05556 L11.6667,0 L10.1111,0 L10.1111,1.05556 L3.88889,1.05556 L3.88889,0 L2.33333,0 L2.33333,1.05556 L1.55556,1.05556 C0.692222,1.05556 0.00777777,1.75556 0.00777777,2.61111 L0,12.5 C0,13.3556 0.692222,14 1.55556,14 L12.4444,14 C13.3,14 14,13.3556 14,12.5 L14,2.61111 C14,1.75556 13.3,1.05556 12.4444,1.05556 Z M12.4444,12.5 L1.55556,12.5 L1.55556,3.94444 L12.4444,3.94444 L12.4444,12.5 Z M8.55556,8.61111 L3.11111,8.61111 L3.11111,10.1667 L8.55556,10.1667 L8.55556,8.61111 Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <button
+                    class="chakra-button css-c24asi"
+                    role="date-filter-button"
+                    type="button"
+                  >
+                    All dates
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div
+        class="content-wrapper css-0"
+      >
+        <button
+          class="chakra-button css-1lddm08"
+          role="fetch-data-button"
+          type="button"
+        >
+          Get random tasks
+        </button>
+        <div
+          class="css-1v8nkjm"
+        >
+          <h2
+            style="font-size: 1.25em;"
+          >
+            Filter tasks: 
+          </h2>
+          <div
+            class="css-185f7xr"
+          >
+            <button
+              class="chakra-button css-fu5gd8"
+              id="btn-1"
+              type="button"
+            >
+              All
+            </button>
+            <button
+              class="chakra-button css-fu5gd8"
+              id="btn-2"
+              type="button"
+            >
+              Active
+            </button>
+            <button
+              class="chakra-button css-fu5gd8"
+              id="btn-3"
+              type="button"
+            >
+              Done
+            </button>
+          </div>
+        </div>
+        <div
+          class="chakra-input__group css-d4ficv"
+        >
+          <input
+            class="chakra-input css-117fu1l"
+            icon="[object Object]"
+            id="search"
+            placeholder="Search by task..."
+            role="searchbar"
+            value=""
+          />
+          <div
+            class="chakra-input__right-addon css-u3ali5"
+          >
+            <svg
+              class="chakra-icon css-onkibi"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M23.384,21.619,16.855,15.09a9.284,9.284,0,1,0-1.768,1.768l6.529,6.529a1.266,1.266,0,0,0,1.768,0A1.251,1.251,0,0,0,23.384,21.619ZM2.75,9.5a6.75,6.75,0,1,1,6.75,6.75A6.758,6.758,0,0,1,2.75,9.5Z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+        </div>
+        <div />
+        <div
+          class="css-d2pp4n"
+        >
+          <svg
+            class="chakra-icon css-6oco0p"
+            focusable="false"
+            role="form-icon"
+            viewBox="0 0 24 24"
+          >
+            <g
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+            >
+              <rect
+                height="18"
+                rx="2"
+                ry="2"
+                width="18"
+                x="3"
+                y="3"
+              />
+              <path
+                d="M12 8v8"
+              />
+              <path
+                d="M8 12h8"
+              />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
