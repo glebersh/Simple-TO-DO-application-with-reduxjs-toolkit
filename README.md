@@ -1,7 +1,5 @@
 # TODO application
 
-_Currently in work_
-
 ## If you use this application, don't forget to start the server with the "npm run server" command (default port is 3001)
 
 ## Tech Stack & Tools
